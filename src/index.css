@@ -6,9 +6,11 @@ body {
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fafbfd;
+}
+.bg {
   background-color: #ffffff;
 }
-
 .menu {
   font-weight: 300;
   font-size: 16px;
@@ -18,16 +20,17 @@ body {
   font-weight: 500;
   font-size: larger;
 }
-
 .boxWinner {
   margin-top: 150px;
   color: #627498;
 }
+ul {
+  list-style: none;
+}
 .boxWelcome {
-  margin-top: 150px;
+  padding-top: 150px;
   color: #627498;
 }
-
 .topicBoxMenu {
   font-weight: 400;
   font-size: 21px;
@@ -36,11 +39,27 @@ body {
   margin-top: 150px;
   color: #627498;
 }
-
 .boxBar {
   color: #627498;
-  background-color: #fafbfd;
-  height: 200px;
   text-align: center;
+  padding-top: 50px;
+  background-color: #fafbfd;
 }
 
+.boxHow{
+  padding-top:150px;
+  background-color: #ffffff;
+  color: #627498;
+}
+.topic{
+  color: #627498;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.topic_sec{
+  color: #627498;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 300;
+}
