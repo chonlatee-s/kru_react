@@ -6,7 +6,7 @@ function Banner() {
         <div className="container boxWelcome">
         <div className="row">
           <div className="col-lg-5 col-sm-12 mb-4 text-center">
-            <img src={ad} className="img-fluid" />
+            <img src={ad} className="img-fluid" alt="ครูผู้ช่วย"/>
           </div>
           <div className="col-lg-7 col-sm-12">
             <div className="container-fluid">
@@ -23,8 +23,8 @@ function Banner() {
               </div>
               <div className="row">
                 <div className="col">
-                  <a className="btn btn-outline-success" href="#">ดาวน์โหลดแอปพลิเคชัน</a> &nbsp;
-                  <a className="btn btn-outline-primary" href="#">เพจ ครูผู้ช่วย.com</a>
+                  <a className="btn btn-outline-success" href="https://play.google.com/store/apps/details?id=com.kruApp.kruphoochuay">ดาวน์โหลดแอปพลิเคชัน</a> &nbsp;
+                  <a className="btn btn-outline-primary" href="https://web.facebook.com/%E0%B8%84%E0%B8%A3%E0%B8%B9%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2com-110744400336909/">เพจ ครูผู้ช่วย.com</a>
                 </div>
               </div>
             </div>

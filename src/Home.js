@@ -7,7 +7,7 @@ import How from './How';
 import Bar from './Bar';
 function Home() {
   return (
-    <div className="container-fluid bg">
+    <div className="bg">
       <Menu />
       <Banner/>
       <MenuBox/>
