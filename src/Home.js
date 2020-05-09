@@ -1,19 +1,15 @@
 import React from 'react';
-import Menu from './Menu';
-import Winner from './Winner';
+import Competition from './Competition';
 import Banner from './Banner';
 import MenuBox from './MenuBox';
 import How from './How';
-import Bar from './Bar';
 function Home() {
   return (
-    <div className="bg">
-      <Menu />
+    <div>
       <Banner/>
       <MenuBox/>
-      <Winner/>
+      <Competition/>
       <How/>
-      <Bar/>
     </div>
   );
 }

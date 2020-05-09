@@ -17,11 +17,12 @@ body {
 }
 .logo_brand {
   color: #b7996c;
-  font-weight: 500;
-  font-size: larger;
+  font-weight: 400;
+  font-size: 20px;
 }
-.boxWinner {
-  margin-top: 150px;
+.boxCompetition {
+  padding-top:150px;
+  padding-bottom:50px;
   color: #627498;
 }
 ul {
@@ -39,6 +40,10 @@ ul {
   margin-top: 150px;
   color: #627498;
 }
+.boxMenu a:link{color:#627498;}
+.boxMenu a:visited{color:#627498;}
+.boxMenu a:hover{color:#b7996c;}
+
 .boxBar {
   color: #627498;
   text-align: center;
@@ -48,9 +53,32 @@ ul {
 
 .boxHow{
   padding-top:150px;
-  background-color: #ffffff;
+  padding-bottom:50px;
   color: #627498;
 }
+
+.boxMagic{
+  padding-top:150px;
+  padding-bottom:50px;
+  color: #627498;
+}
+.boxPro{
+  padding-top:150px;
+  padding-bottom:50px;
+  color: #627498;
+}
+.boxTutorial{
+  padding-top:150px;
+  padding-bottom:50px;
+  color: #627498;
+}
+.boxTutorial a:link{color: #627498;}
+.boxTutorial a:visited{color: #627498;}
+.boxTutorial a:hover{color: #28a745;}
+
+
+
+
 .topic{
   color: #627498;
   font-size: 24px;
@@ -63,3 +91,39 @@ ul {
   text-align: center;
   font-weight: 300;
 }
+.boxText{
+  padding-top:10px;
+  padding-right:20px;
+  padding-left:20px;
+  padding-bottom:3px;
+  border-left-width:5px;
+  border-left-color:#b7996c;
+  border-left-style:solid;
+  background-color:#f9f7f3;
+}
+
+@media (max-width: 767.98px) { 
+  .btnFull {width: 100%}
+  .logo_brand {
+    color: #b7996c;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .topicTop{
+    color: #627498;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .topic_sec{
+    color: #627498;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 300;
+  }
+ }
+
+
+a:hover {
+  text-decoration: none;
+} 

@@ -6,30 +6,30 @@ function Menu() {
     return (
             <nav className="navbar fixed-top navbar-expand-sm navbar-light" style={{backgroundColor: "#ffffff"}}>
                 <div className="container">
-                    <NavLink to="/" className="navbar-brand" ><img src={logo} style={{width:"15%"}}/><span className="logo_brand"> ครูผู้ช่วย.com</span></NavLink>
+                    <NavLink to="/" className="navbar-brand" ><img src={logo} style={{width:"12%"}} alt="ครูผู้ช่วย"/><span className="logo_brand"> ครูผู้ช่วย.com</span></NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul className="navbar-nav menu mx-auto">
                             <li className="nav-item">
-                                <NavLink to="/how" activeStyle={{color:"#28a745"}} className="nav-link" href="#" style={{color:"#627498"}}>เกณฑ์การสอบ</NavLink>
+                                <NavLink to="/how" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>เกณฑ์การสอบ</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" style={{color:"#627498"}}>แนวข้อสอบ</a>
+                                <NavLink to="/guidelines" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>แนวข้อสอบ</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" style={{color:"#627498"}}>ไฟล์เอกสาร</a>
+                                <NavLink to="/file" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>ไฟล์เอกสาร</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" style={{color:"#627498"}}>เซียมซีเสี่ยงทาย</a>
+                                <NavLink to="/competition" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>จัดอันดับการแข่งขัน</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" style={{color:"#627498"}}>จัดอันดับการแข่งกัน</a>
+                                <NavLink to="/Magic" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>เซียมซีเสี่ยงทาย</NavLink>
                             </li>
                         </ul>
                         <div className="navbar-nav ml-md-auto">
-                            <a className="btn btn-primary" href="#">ทำแบบทดสอบ</a>
+                            <button className="btn btn-primary" href="#">ทำแบบทดสอบ</button>
                         </div>
                     </div>
                 </div>

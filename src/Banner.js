@@ -13,18 +13,18 @@ function Banner() {
               <div className="row">
                 <div className="col">
                   <p></p>
-                  <h1>ฉันจะเป็นครูผู้ช่วย</h1>
-                  <h5>มาเตรียมความพร้อมก่อนสอบกันเถอะ</h5>
+                  <h1 className="topicTop" style={{textAlign:"left"}}>ฉันจะเป็นครูผู้ช่วย</h1>
+                  <h5 className="topic_sec" style={{textAlign:"left"}}>มาเตรียมความพร้อมก่อนสอบกันเถอะ</h5>
                   <p></p>
                   <p>สามารถทำข้อสอบผ่านทางเว็บไซต์ "ครูผู้ช่วย.com" และแอปพลิเคชัน "ครูผู้ช่วย" ดาวน์โหลดได้แล้ววันนี้ที่ Google Play
                     ติดตามข้อมูลเพิ่มเติมได้ที่ Facebook Page
-                    </p>
+                  </p>
                 </div>
               </div>
               <div className="row">
                 <div className="col">
-                  <a className="btn btn-outline-success" href="https://play.google.com/store/apps/details?id=com.kruApp.kruphoochuay">ดาวน์โหลดแอปพลิเคชัน</a> &nbsp;
-                  <a className="btn btn-outline-primary" href="https://web.facebook.com/%E0%B8%84%E0%B8%A3%E0%B8%B9%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2com-110744400336909/">เพจ ครูผู้ช่วย.com</a>
+                  <a className="btn btn-outline-success btnFull"  target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.kruApp.kruphoochuay">ดาวน์โหลดแอปพลิเคชัน</a> &nbsp;
+                  <a className="btn btn-outline-primary btnFull" target="_blank" rel="noopener noreferrer" href="https://web.facebook.com/%E0%B8%84%E0%B8%A3%E0%B8%B9%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2com-110744400336909/">เพจ ครูผู้ช่วย.com</a>
                 </div>
               </div>
             </div>

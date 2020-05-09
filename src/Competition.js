@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Winner() {
+function Competition() {
     return (
-        <div className="container boxWinner">
+        <div className="container boxCompetition">
         <div className="row">
           <div className="col-lg-5 col-sm-12 mb-4 text-center">
 
@@ -35,9 +35,9 @@ function Winner() {
                     <path fillRule="evenodd" d="M12.5 3a2 2 0 100 4 2 2 0 000-4zm-3 2a3 3 0 116 0 3 3 0 01-6 0zm-6-2a2 2 0 100 4 2 2 0 000-4zm-3 2a3 3 0 116 0 3 3 0 01-6 0z" clipRule="evenodd"/>
                     <path d="M7 10h2v4H7v-4z"/>
                     <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/>
-                    </svg> จัดอันดับการแข่งกัน
+                    </svg> <span className="topicTop">จัดอันดับการแข่งกัน</span>
                   </h1>
-                  <h5>เรียงตามวันเวลา และคะแนนสูงสุด 3 คน</h5>
+                  <h5 className="topic_sec" style={{textAlign:"left"}}>เรียงตามวันเวลา และคะแนนสูงสุด 3 คน</h5>
                   <p></p>
                   <p>หากต้องการเข้าร่วมการแข่งขันจัดอันดับคะแนน ต้องลงทะเบียนเพื่อเข้าสู่ระบบผ่านทาง Facebook หรือ Google เท่านั้น 
                      มาสร้างความท้าทายไปด้วยกัน
@@ -46,7 +46,7 @@ function Winner() {
               </div>
               <div className="row">
                 <div className="col">
-                  <a className="btn btn-outline-success" href="#">เข้าร่วมแข่งขัน</a> &nbsp;
+                  <button className="btn btn-outline-success btnFull">เข้าร่วมแข่งขัน</button> &nbsp;
                 </div>
               </div>
             </div>
@@ -56,5 +56,5 @@ function Winner() {
     );
 }
 
-export default Winner;
+export default Competition;
 
