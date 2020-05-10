@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import Spinner from 'react-bootstrap/Spinner'
 import axios from 'axios'
 
@@ -38,11 +41,15 @@ class Magic extends Component {
     render() {
         if(this.state.open) {
             return (
-                <div className="container boxMagic">
-                    <h1 className="topicTop text-center">เซียมซีเสี่ยงทาย</h1>
-                    <h5 className="topic_sec">ตั้งจิตอธิษฐาน กดปุ่มเสี่ยงทายแล้วรอดูคำทำนาย</h5>
-                    <div className="row text-center">
-                        <div className="col-sm" style={{paddingTop:"10px"}}>
+                <Container className="boxMagic">
+                    <Row>
+                        <Col lg="12">
+                            <h1 className="topicTop text-center">เซียมซีเสี่ยงทาย</h1>
+                            <h5 className="topic_sec">ตั้งจิตอธิษฐาน กดปุ่มเสี่ยงทายแล้วรอดูคำทำนาย</h5>
+                        </Col>
+                    </Row>
+                    <Row className="text-center" style={{paddingTop:"50px"}}>
+                        <Col lg="12">
                             {
                                this.state.loadStatus === true ? 
                                <div>
@@ -60,30 +67,37 @@ class Magic extends Component {
                                     <button className="btn btn-outline-success btnFull" onClick = {this.getMagic}>เริ่มเสี่ยงทาย</button>
                                 </div>
                             }
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             );
         }else {
             return (
-                <div className="container boxMagic">
-                    <h1 className="topicTop text-center">เซียมซีเสี่ยงทาย</h1>
-                    <h5 className="topic_sec">ตั้งจิตอธิษฐาน กดปุ่มเสี่ยงทายแล้วรอดูคำทำนาย</h5>
-                    <div className="boxText">
-                        <span style={{fontSize:"24px",fontWeight:400}}>คุณได้ใบที่ {this.state.id}</span>
-                        <p>{this.state.result}</p>
-                        <hr style={{borderColor:"#7c8dac", borderWidth:0.1, opacity:0.5 }}/>
-                        <span style={{fontSize:"14px"}}>ที่มา วัดหนองบัว จังหวัดอุบลราชธานี</span>
-                    </div>
-                    <br/>
-                    <div className="text-center">
-                        <button className="btn btn-outline-success btnFull" onClick = {this.playAgain}>ลองอีกครั้ง</button>
-                    </div>
-                </div>
+                <Container className="boxMagic">
+                    <Row>
+                        <Col lg="12">
+                            <h1 className="topicTop text-center">เซียมซีเสี่ยงทาย</h1>
+                            <h5 className="topic_sec">ตั้งจิตอธิษฐาน กดปุ่มเสี่ยงทายแล้วรอดูคำทำนาย</h5>
+                        </Col>
+                    </Row>
+                    <Row style={{paddingTop:"50px"}}>
+                        <Col lg="12">
+                            <div className="boxText">
+                                <span style={{fontSize:"24px",fontWeight:400}}>คุณได้ใบที่ {this.state.id}</span>
+                                <p>{this.state.result}</p>
+                                <hr style={{borderColor:"#7c8dac", borderWidth:0.1, opacity:0.5 }}/>
+                                <span style={{fontSize:"14px"}}>ที่มา วัดหนองบัว จังหวัดอุบลราชธานี</span>
+                            </div>
+                            <br/>
+                            <div className="text-center">
+                                <button className="btn btn-outline-success btnFull" onClick = {this.playAgain}>ลองอีกครั้ง</button>
+                            </div>
+                        </Col>
+                    </Row>
+
+                </Container>
             );
         }
     }
 }
-
-
 export default Magic;

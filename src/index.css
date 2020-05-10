@@ -21,7 +21,7 @@ body {
   font-size: 20px;
 }
 .boxCompetition {
-  padding-top:150px;
+  padding-top:125px;
   padding-bottom:50px;
   color: #627498;
 }
@@ -29,7 +29,7 @@ ul {
   list-style: none;
 }
 .boxWelcome {
-  padding-top: 150px;
+  padding-top: 125px;
   color: #627498;
 }
 .topicBoxMenu {
@@ -37,7 +37,7 @@ ul {
   font-size: 21px;
 }
 .boxMenu {
-  margin-top: 150px;
+  margin-top: 125px;
   color: #627498;
 }
 .boxMenu a:link{color:#627498;}
@@ -52,33 +52,34 @@ ul {
 }
 
 .boxHow{
-  padding-top:150px;
+  padding-top:125px;
   padding-bottom:50px;
   color: #627498;
 }
 
 .boxMagic{
-  padding-top:150px;
+  padding-top:125px;
   padding-bottom:50px;
   color: #627498;
 }
 .boxPro{
-  padding-top:150px;
+  padding-top:125px;
   padding-bottom:50px;
   color: #627498;
 }
 .boxTutorial{
-  padding-top:150px;
+  padding-top:125px;
   padding-bottom:50px;
   color: #627498;
 }
 .boxTutorial a:link{color: #627498;}
 .boxTutorial a:visited{color: #627498;}
 .boxTutorial a:hover{color: #28a745;}
-
-
-
-
+.boxTest{
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
 .topic{
   color: #627498;
   font-size: 24px;
@@ -101,6 +102,11 @@ ul {
   border-left-style:solid;
   background-color:#f9f7f3;
 }
+.boxExam{
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
 
 @media (max-width: 767.98px) { 
   .btnFull {width: 100%}
@@ -122,7 +128,6 @@ ul {
     font-weight: 300;
   }
  }
-
 
 a:hover {
   text-decoration: none;

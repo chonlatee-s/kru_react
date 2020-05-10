@@ -1,4 +1,7 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import smHome5 from './img/smHome5.jpg';
 import smHome4 from './img/smHome4.jpg';
@@ -8,12 +11,15 @@ import smHome1 from './img/smHome1.jpg';
 
 function Tutorial() {
     return (
-        <div className="container boxTutorial">
-            <h1 className="topicTop text-center">บทเรียนออนไลน์</h1>
-            <h5 className="topic_sec">วิดีโอสั้น ๆ เข้าใจง่าย อย่าลืมกดติดตามให้กำลังใจพวกเราด้วยนะ</h5>
-
-            <div className="row justify-content-md-center" style={{paddingTop:"50px"}}>
-                <div className="col-md-auto mb-4">
+        <Container className="boxTutorial">
+            <Row>
+                <Col lg="12">
+                    <h1 className="topicTop text-center">บทเรียนออนไลน์</h1>
+                    <h5 className="topic_sec">วิดีโอสั้น ๆ เข้าใจง่าย อย่าลืม<span style={{color:"#fe8081"}}> "กดติดตาม" </span>ให้กำลังใจพวกเราด้วยนะ</h5>
+                </Col>
+            </Row>
+            <Row className="justify-content-md-center" style={{paddingTop:"50px"}}>
+                <Col lg="auto" className="mb-4">
                     <Card style={{ width: '14rem' }}>
                         <Card.Img variant="top" src={smHome5} />
                         <Card.Body>
@@ -24,8 +30,8 @@ function Tutorial() {
                             </svg> <span style={{fontSize:"16px", fontWeight:300,color:"#28a745", cursor:"pointer"}}><a href="https://www.youtube.com/watch?v=MGAgvIUj8VU&list=PL91Isj7zXY5xLoCe-Jt0H2Hm-_q0Yp6qI&index=2&t=4s" target="_blank" rel="noopener noreferrer">เข้าสู่บทเรียน</a></span>
                         </Card.Body>
                     </Card>
-                </div>
-                <div className="col-md-auto mb-4">
+                </Col>
+                <Col lg="auto" className="mb-4">
                     <Card style={{ width: '14rem' }}>
                         <Card.Img variant="top" src={smHome1} />
                         <Card.Body>
@@ -36,8 +42,8 @@ function Tutorial() {
                             </svg> <span style={{fontSize:"16px", fontWeight:300,color:"#28a745", cursor:"pointer"}}><a href="https://www.youtube.com/watch?v=tJlWVEVUrvI&list=UUPA-YiEnmNJ9u9d_pJfVywA&index=3" target="_blank" rel="noopener noreferrer">เข้าสู่บทเรียน</a></span>
                         </Card.Body>
                     </Card>
-                </div>
-                <div className="col-md-auto mb-4">
+                </Col>
+                <Col lg="auto" className="mb-4">
                     <Card style={{ width: '14rem' }}>
                         <Card.Img variant="top" src={smHome3} />
                         <Card.Body>
@@ -48,8 +54,8 @@ function Tutorial() {
                             </svg> <span style={{fontSize:"16px", fontWeight:300,color:"#28a745", cursor:"pointer"}}><a href="https://www.youtube.com/watch?v=doQduqTV_4Q&list=PL91Isj7zXY5zKykALKsOAyKf6nsvFmbRC&index=2&t=3s" target="_blank" rel="noopener noreferrer">เข้าสู่บทเรียน</a></span>
                         </Card.Body>
                     </Card>
-                </div>
-                <div className="col-md-auto mb-4">
+                </Col>
+                <Col lg="auto" className="mb-4">
                     <Card style={{ width: '14rem' }}>
                         <Card.Img variant="top" src={smHome2} />
                         <Card.Body>
@@ -60,8 +66,8 @@ function Tutorial() {
                             </svg> <span style={{fontSize:"16px", fontWeight:300,color:"#28a745", cursor:"pointer"}}><a href="https://www.youtube.com/watch?v=NUc65ufYkwM&list=PL91Isj7zXY5zkfMwUzpe3QWrBIVOyPCuQ" target="_blank" rel="noopener noreferrer">เข้าสู่บทเรียน</a></span>
                         </Card.Body>
                     </Card>
-                </div>
-                <div className="col-md-auto mb-4">
+                </Col>
+                <Col lg="auto" className="mb-4">
                     <Card style={{ width: '14rem' }}>
                         <Card.Img variant="top" src={smHome4} />
                         <Card.Body>
@@ -72,9 +78,9 @@ function Tutorial() {
                             </svg> <span style={{fontSize:"16px", fontWeight:300,color:"#28a745", cursor:"pointer"}}><a href="https://www.youtube.com/watch?v=lRhcVMESpvI&list=PL91Isj7zXY5yEcwHH2iwAlbVp51Y8Pj1m&index=2&t=17s" target="_blank" rel="noopener noreferrer">เข้าสู่บทเรียน</a></span>
                         </Card.Body>
                     </Card>
-                </div>
-            </div>
-        </div>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 
