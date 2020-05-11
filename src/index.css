@@ -107,6 +107,9 @@ ul {
   padding-bottom:50px;
   color: #627498;
 }
+.boxExam a:link{color: #627498;}
+.boxExam a:visited{color: #627498;}
+.boxExam a:hover{color: #b7996c;}
 
 @media (max-width: 767.98px) { 
   .btnFull {width: 100%}
