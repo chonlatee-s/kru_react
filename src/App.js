@@ -11,9 +11,11 @@ import File from './File';
 import Guidelines from './Guidelines';
 import Test from './Test';
 import Exam from './Exam';
+import Result from './Result';
 import Error404 from './Error404';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -32,6 +34,7 @@ function App() {
           <Route path="/guidelines" component={Guidelines} />
           <Route path="/test" component={Test} />
           <Route path="/exam/:topic" component={Exam} />
+          <Route path="/result" component={Result} />
           <Route component={Error404} />
         </Switch>
       </div>

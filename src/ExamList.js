@@ -12,7 +12,8 @@ class ExamList extends Component {
             ch4 : this.props.questionAll.ch4, 
             answer : this.props.questionAll.answer, 
             ref: this.props.questionAll.ref,
-            reply : e.currentTarget.id
+            reply : e.currentTarget.id,
+            check: this.props.questionAll.answer===e.currentTarget.id?true:false // ตรวจถูกผิดตรงนี้ได้เลย  ไม่ต้องส่งไปตรวจเซิร์ฟเวอร์ เปลืองโหลด
         }
         this.props.nextQuestion(data)
     }

@@ -6,15 +6,21 @@ import Col from 'react-bootstrap/Col'
 import ExamList from './ExamList'
 import Spinner from 'react-bootstrap/Spinner'
 import axios from 'axios'
+import Result from './Result'
 
 class Exam extends Component {
     state = {
+        waitResult:false,
         waitData:false,
-        examLists : [{ id:'', question:'', ch1:'', ch2:'', ch3:'', ch4:'', answer:'', ref:'', reply:'0' }],
+        examLists : [{ id:'', question:'', ch1:'', ch2:'', ch3:'', ch4:'', answer:'', ref:'', reply:'0', check:false }],
         arrPosition : 0,
         score : 0,
         btnPrev:false,
         btnNext:true,
+        btnCheckAnser:false,
+
+        minute:1,
+        sec:59
     }
     getExam = () => {
         let exam = []
@@ -31,10 +37,16 @@ class Exam extends Component {
                     ch4:item.ch4,
                     answer:item.answer,
                     ref:item.ref,
-                    refply:'0' // เพิ่มมาใหม่ เพื่อเก็บคำตอบ
+                    reply:'0', // เพิ่มมาใหม่ เพื่อเก็บคำตอบ
+                    check:false
                 }
             })
-            this.setState({examLists:exam, waitData:true})
+            this.setState({
+                examLists:exam, waitData:true
+                }, () => {
+                this.startTimer() // รับข้อมูลเสร็จ ให้เวลาเริ่มทำงาน
+            })
+
         })
         .catch((err)=>{
             console.log(err)
@@ -53,7 +65,7 @@ class Exam extends Component {
             if(this.state.arrPosition-1 === 0) { this.setState({btnPrev:false}) }
         }
     }
-    nextQuestion = (data) => {
+    nextQuestion = (data) => { 
         // ถ้ายังไม่ถึงตำแหน่งสุดท้ายก็บวกเพิ่มเรื่อย ๆ
         if(this.state.arrPosition !== this.state.examLists.length-1) this.setState({ btnPrev:true, arrPosition : this.state.arrPosition + 1}) 
 
@@ -75,30 +87,75 @@ class Exam extends Component {
             ch4 : data.ch4, 
             answer : data.answer,
             ref : data.ref,
-            reply : data.reply
+            reply : data.reply,
+            check : data.check
         } 
 
         // อัพเดทข้อมูลใหม่
         this.setState({
             examLists : dataExam
+            }, () => {
+                this.checkFinished()
         })
     }
+    checkFinished = () => {
+        let check = 0
+        this.state.examLists.forEach( (item) => {
+            if(item.reply === '0') check += 1
+        })
+        if(check === 0) this.setState({btnCheckAnser:true})
+    }
+    checkAnswer = () => {
+        clearInterval(this.clockCall)
+        let result = 0
+        this.state.examLists.forEach( (item) => {
+            if(item.answer === item.reply) result += 1
+        })
+        this.setState({score : result, waitResult:true, waitData:false})
+    }
 
+
+    startTimer = () => {
+        this.clockCall = setInterval(() => {
+            this.decrementClock()
+        }, 1000);
+    }
+    
+    decrementClock = () => {
+        if (this.state.sec !== 0) {
+            this.setState({ sec: this.state.sec - 1 })
+        }
+        else {
+            if (this.state.minute === 0) {
+                clearInterval(this.clockCall)
+                this.checkAnswer();
+                // console.log("time out!!!")
+            }
+            else {
+                this.setState({ minute: this.state.minute - 1 })
+                this.setState({ sec: 59 })
+            }
+        }
+    }
+
+    changeZeroSec = (a) => {
+       return a<10 ? `0${a}` : a
+    }
     render() {
-        // console.log(this.props.match.params.topic)
         return (
             <Container className="boxExam">
             { 
                 this.state.waitData ?
                 <div>
                     <Row>
-                        <Col xs="12" className="text-center">
-                            <p style={{fontSize:"30px", fontWeight:300, color:"#ff5f5f"}}> เวลา 09:10 นาที</p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs="12" style={{paddingBottom:"10px"}}>
-                            <ProgressBar striped variant="success" now={80} label={`80%`} style={{height: "10px"}}/>
+                        <Col lg="12" lg="12" className="text-center mb-2">
+                            <p style={{fontSize:"18px", fontWeight:300, margin:"3px", color:"#b7996c"}}>
+                            {
+                                this.state.minute !== 0 ?'เวลา '+ this.state.minute +' : '+ this.changeZeroSec(this.state.sec)+' นาที'
+                                : this.state.sec !== 0 ? 'เวลา '+ this.changeZeroSec(this.state.sec) +' วินาที' : 'หมดเวลา'
+                            }
+                            </p>
+                            <ProgressBar striped variant="info" now={70} label={`70%`} style={{height: "10px"}}/>
                         </Col>
                     </Row>
                     <Row>
@@ -124,7 +181,11 @@ class Exam extends Component {
                         }
                         </Col>
                         <Col xs="8" className="text-center">
-                            <span style={{fontSize:"14px", fontWeight:300}}>โหมดการแข่งกัน</span>
+                            {
+                                this.state.btnCheckAnser
+                                ?<button className="btn btn-outline-success btnFull" onClick = {this.checkAnswer}>ตรวจคำตอบ</button>
+                                :<span style={{fontSize:"14px", fontWeight:300}}>โหมดการแข่งกัน</span>
+                            }
                         </Col>
                         <Col xs="2" style={{textAlign:"right"}}>
                         { 
@@ -141,14 +202,16 @@ class Exam extends Component {
                     </Row>
                 </div>
                 :
-                <Row>
-                    <Col xs="12" className="text-center">
-                        <Spinner animation="grow" variant="info" />
-                        <Spinner animation="grow" variant="danger" />
-                        <Spinner animation="grow" variant="warning" />
-                        <p style={{fontSize:"16px"}}>กรุณารอสักครู่</p>
-                    </Col>
-                </Row>
+                    this.state.waitResult?<Result result={this.state.examLists} score={this.state.score}/> 
+                    : // ถ้ายังโหลดข้อสอบไม่เสร็จ และ ผลสอบยังไม่เป็น true ก็แสดงการโหลด
+                    <Row>
+                        <Col xs="12" className="text-center">
+                            <Spinner animation="grow" variant="info" />
+                            <Spinner animation="grow" variant="danger" />
+                            <Spinner animation="grow" variant="warning" />
+                            <p style={{fontSize:"16px"}}>กรุณารอสักครู่</p>
+                        </Col>
+                    </Row>
             }
             </Container>
         );

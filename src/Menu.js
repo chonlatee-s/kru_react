@@ -32,7 +32,7 @@ function Menu() {
                     </ul>
                     <div className="navbar-nav ml-md-auto mb-2">
                         <button className="btn  btnFull" style={{backgroundColor:"#fdefef"}}>
-                            <FontAwesomeIcon icon={faCoffee} style={{color:"#ff5f5f", fontSize:"21px",}}/>
+                            <FontAwesomeIcon icon={faCoffee} style={{color:"#ff5f5f", fontSize:"18px",}}/>
                             <span style={{color:"#ff5f5f",fontSize:"14px", verticalAlign:"text-top"}}> Buy Me a Coffee</span>
                         </button>
                          
