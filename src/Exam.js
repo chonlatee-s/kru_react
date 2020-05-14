@@ -20,7 +20,8 @@ class Exam extends Component {
         btnCheckAnser:false,
 
         minute:1,
-        sec:59
+        sec:59,
+        colorBar:'danger'
     }
     getExam = () => {
         let exam = []
@@ -96,6 +97,7 @@ class Exam extends Component {
             examLists : dataExam
             }, () => {
                 this.checkFinished()
+                this.checkBar()
         })
     }
     checkFinished = () => {
@@ -113,14 +115,11 @@ class Exam extends Component {
         })
         this.setState({score : result, waitResult:true, waitData:false})
     }
-
-
     startTimer = () => {
         this.clockCall = setInterval(() => {
             this.decrementClock()
         }, 1000);
     }
-    
     decrementClock = () => {
         if (this.state.sec !== 0) {
             this.setState({ sec: this.state.sec - 1 })
@@ -137,9 +136,21 @@ class Exam extends Component {
             }
         }
     }
-
     changeZeroSec = (a) => {
        return a<10 ? `0${a}` : a
+    }
+    checkCount = () => {
+        let count = 0
+        this.state.examLists.map((item)=>{
+            return item.reply !== '0' ? count+=1 : null
+        })
+        return count
+    }
+    checkBar = () => {
+        let bar = this.checkCount()
+        if ((bar*100) / this.state.examLists.length >= 80) this.setState({colorBar:'success'})
+        else if((bar*100) / this.state.examLists.length >= 45) this.setState({colorBar:'warning'})
+        else this.setState({colorBar:'danger'})
     }
     render() {
         return (
@@ -148,14 +159,14 @@ class Exam extends Component {
                 this.state.waitData ?
                 <div>
                     <Row>
-                        <Col lg="12" lg="12" className="text-center mb-2">
+                        <Col lg="12" className="text-center mb-2">
                             <p style={{fontSize:"18px", fontWeight:300, margin:"3px", color:"#b7996c"}}>
                             {
                                 this.state.minute !== 0 ?'เวลา '+ this.state.minute +' : '+ this.changeZeroSec(this.state.sec)+' นาที'
                                 : this.state.sec !== 0 ? 'เวลา '+ this.changeZeroSec(this.state.sec) +' วินาที' : 'หมดเวลา'
                             }
                             </p>
-                            <ProgressBar striped variant="info" now={70} label={`70%`} style={{height: "10px"}}/>
+                            <ProgressBar striped variant={ this.state.colorBar } now={ (this.checkCount()*100)/this.state.examLists.length } label={`${(this.checkCount()*100)/this.state.examLists.length}%`} style={{height: "10px"}}/>
                         </Col>
                     </Row>
                     <Row>

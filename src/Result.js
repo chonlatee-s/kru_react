@@ -21,8 +21,15 @@ class Result extends Component {
                     <Alert style={{backgroundColor:"#f9f7f3"}}>
                         <p style={{margin:"0px", fontSize:"28px"}}>คะแนนรวม</p>
                         <p style={{fontSize:"60px", margin:"0px"}}>{`${this.props.score}/${this.props.result.length}`}</p>
-                        <p style={{fontSize:"16px", marginBottom:"5px", color:"#b7996c"}}>พยายามอีกนิดนะ เดี๋ยวก็ทำได้</p>
-                        <ProgressBar striped variant="info" now={(this.props.score*10)} label={`${(this.props.score*10)}%`} style={{height: "10px"}}/>
+                        <p style={{fontSize:"16px", marginBottom:"5px", color:"#b7996c"}}>
+                            {
+                                this.props.score>=9 ? <span>ยอดเยี่ยม ความฝันอยู่แค่เอื้อม</span>
+                                :this.props.score>=6 ? <span>ใกล้ความเป็นจริงแล้ว สู้ ๆ </span>
+                                :this.props.score>=4 ? <span>คะแนนดีขึ้นแล้ว แต่ยังไปได้อีก</span>
+                                :<span>พยายามอีกนิดนะ เดี๋ยวก็ทำได้</span>
+                            }
+                        </p>
+                        <ProgressBar striped variant="info" now={(this.props.score*100)/this.props.result.length} label={`${(this.props.score*100)/this.props.result.length}%`} style={{height: "10px"}}/>
                     </Alert>
                     </Col>
                     <Col md="12" lg="9">
@@ -77,24 +84,6 @@ class Result extends Component {
                                     );
                                 })
                             }
-                            {/* <p className="question">ข้อ 1 แมวอะไรสีฟ้า</p>
-                            <p className="result"><span style={{color:"#b7996c", fontWeight:300}}>ตอบ</span> แมวสีน้ำเงิน</p>
-                            <p className="result"><span style={{color:"#b7996c", fontWeight:300}}>เฉลย</span> แมวสีน้ำเงิน</p>
-                            <hr/>
-                            <p className="question">ข้อ 2 แมวอะไรสีฟ้า</p>
-                            <p className="result"><span style={{color:"#b7996c", fontWeight:300}}>ตอบ</span> แมวสีน้ำเงิน</p>
-                            <p className="result"><span style={{color:"#b7996c", fontWeight:300}}>เฉลย</span> แมวสีน้ำเงิน</p>
-                            <div className="checkAns">
-                                <svg className="bi bi-check" width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fillRule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clipRule="evenodd"/>
-                                </svg>
-                                <svg className="bi bi-x" width="0.9em" height="0.9em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fillRule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clipRule="evenodd"/>
-                                    <path fillRule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clipRule="evenodd"/>
-                                </svg>
-                                <span style={{fontSize:"12px"}}> อ้างอิง</span>
-                            </div>
-                            <hr style={{marginTop:"0px"}}/> */}
                         </div>
                     </Col>
                 </Row>

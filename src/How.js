@@ -8,7 +8,7 @@ function How() {
         <Row>
             <Col lg="12">
                 <h1 className="topicTop text-center">เกณฑ์การสอบครูผู้ช่วย</h1>
-                <h5 className="topic_sec">การสอบครูผู้ช่วยแบ่งออกเป็น 3 ส่วน (สามารถเปลี่ยนแปลงได้)</h5>
+                <h5 className="topic_sec">การสอบครูผู้ช่วยแบ่งออกเป็น 3 ส่วน <span style={{fontSize:"14px"}}>(ต้องอ่านประกาศทุกครั้ง)</span></h5>
             </Col>
         </Row>
         <Row className="text-center">

@@ -12,6 +12,7 @@ import Guidelines from './Guidelines';
 import Test from './Test';
 import Exam from './Exam';
 import Result from './Result';
+import AboutMe from './AboutMe';
 import Error404 from './Error404';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -35,6 +36,7 @@ function App() {
           <Route path="/test" component={Test} />
           <Route path="/exam/:topic" component={Exam} />
           <Route path="/result" component={Result} />
+          <Route path="/me" component={AboutMe} />
           <Route component={Error404} />
         </Switch>
       </div>
