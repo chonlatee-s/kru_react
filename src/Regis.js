@@ -7,40 +7,34 @@ import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import { Redirect } from 'react-router-dom'
 
+import { connect } from 'react-redux'
+
 class Regis extends Component {
-    state = {
-        googleId:'',
-        googleName:'',
-        googleProfile:'',
-
-        facebookUserId:'',
-        facebookName:'',
-        facebookProfile:'',
-
-        IsLoggedIn:false,
-        type:''
-    }
     responseGoogle = (res) => {
-        this.setState({
-            googleId:res.googleId,
-            google_name:res.profileObj.name, 
-            google_profile:res.profileObj.imageUrl,
+        let dataLogin = {
+            UserId:res.googleId,
+            Name:res.profileObj.name, 
+            Profile:res.profileObj.imageUrl,
             IsLoggedIn:true,
             type:'google'
-        })
+        }
+        this.props.dispatchFromStore(dataLogin)
     }
 
     responseFacebook = (res) => {
-        this.setState({
-            facebookUserId:res.userID,
-            facebookName:res.name, 
-            facebookProfile:res.picture.data.url,
+        let dataLogin = {
+            UserId:res.userID,
+            Name:res.name, 
+            Profile:res.picture.data.url,
             IsLoggedIn:true,
             type:'facebook'
-        })
+        }
+        this.props.dispatchFromStore(dataLogin)
     }
+    
     render() {
-        if(this.state.IsLoggedIn) return <Redirect to='/Exam/1' />
+        const dataStore = this.props.stateFromStore
+        if(dataStore.IsLoggedIn) return <Redirect to='/Exam/3' />
         else{
             return (
                 <Container className="boxRegis">
@@ -91,4 +85,16 @@ class Regis extends Component {
     }
 }
 
-export default Regis;
+const mapStateToProps = (state) => {
+    return {
+        stateFromStore : state.data
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        dispatchFromStore : (dataLogin) => {
+            return dispatch({ type:'ADD_DATA', playload:dataLogin })
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps) (Regis)

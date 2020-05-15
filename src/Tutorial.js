@@ -19,7 +19,7 @@ function Tutorial() {
                 </Col>
             </Row>
             <Row className="justify-content-md-center" style={{paddingTop:"50px"}}>
-                <Col lg="12" className="mb-4">
+                <Col lg="auto" className="mb-4">
                     <Card style={{ width: '14rem' }}>
                         <Card.Img variant="top" src={smHome5} />
                         <Card.Body>
@@ -31,7 +31,7 @@ function Tutorial() {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col lg="12" className="mb-4">
+                <Col lg="auto" className="mb-4">
                     <Card style={{ width: '14rem' }}>
                         <Card.Img variant="top" src={smHome1} />
                         <Card.Body>

@@ -4,10 +4,14 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Alert from 'react-bootstrap/Alert'
+import Image from 'react-bootstrap/Image'
+
+import { connect } from 'react-redux'
 
 class Result extends Component {
     
     render() {
+        const dataStore = this.props.stateFromStore
         return (
             <Container>
                 <Row>
@@ -18,6 +22,17 @@ class Result extends Component {
                 </Row>
                 <Row>
                     <Col md="12" lg="3" className="text-center mb-2">
+                { 
+                    dataStore.IsLoggedIn?
+                    <div>
+                        <Image src ={dataStore.Profile} roundedCircle style={{width:"60px", height:"60px", border: '2px solid #ddd'}}/>
+                        <div style={{fontSize:'14px', fontWeight:'300', paddingBottom:'5px', paddingTop:'3px'}}>{dataStore.Name}</div>
+                    </div>
+                    :null
+                       
+                }
+                    
+                
                     <Alert style={{backgroundColor:"#f9f7f3"}}>
                         <p style={{margin:"0px", fontSize:"28px"}}>คะแนนรวม</p>
                         <p style={{fontSize:"60px", margin:"0px"}}>{`${this.props.score}/${this.props.result.length}`}</p>
@@ -92,4 +107,9 @@ class Result extends Component {
     }
 }
 
-export default Result;
+const mapStateToProps = (state) => {
+    return {
+        stateFromStore : state.data
+    }
+}
+export default connect(mapStateToProps, null) (Result)

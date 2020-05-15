@@ -7,6 +7,9 @@ import ExamList from './ExamList'
 import Spinner from 'react-bootstrap/Spinner'
 import axios from 'axios'
 import Result from './Result'
+import Image from 'react-bootstrap/Image'
+
+import { connect } from 'react-redux'
 
 class Exam extends Component {
     state = {
@@ -24,37 +27,50 @@ class Exam extends Component {
         colorBar:'danger'
     }
     getExam = () => {
+        let dataLogin = {
+            UserId:'',
+            Name:'', 
+            Profile:'',
+            IsLoggedIn:false,
+            type:''
+        }
         let exam = []
-        axios.get(`http://localhost/kru_react_server/getExam.php?topic=${this.props.match.params.topic}`)
-        .then((res)=>{
-            // console.log(res.data)
-            exam = res.data.map((item)=>{
-                return {
-                    id:item.id,
-                    question:item.question,
-                    ch1:item.ch1,
-                    ch2:item.ch2,
-                    ch3:item.ch3,
-                    ch4:item.ch4,
-                    answer:item.answer,
-                    ref:item.ref,
-                    reply:'0', // เพิ่มมาใหม่ เพื่อเก็บคำตอบ
-                    check:false
-                }
-            })
-            this.setState({
-                examLists:exam, waitData:true
-                }, () => {
-                this.startTimer() // รับข้อมูลเสร็จ ให้เวลาเริ่มทำงาน
-            })
+        if(this.props.match.params.topic==='1'|| this.props.match.params.topic==='2') this.props.dispatchFromStore(dataLogin)
+        if(this.props.match.params.topic==='1'|| this.props.match.params.topic==='2' || this.props.match.params.topic==='3'){
+            axios.get(`http://localhost/kru_react_server/getExam.php?topic=${this.props.match.params.topic}`)
+            .then((res)=>{
+                // console.log(res.data)
+                exam = res.data.map((item)=>{
+                    return {
+                        id:item.id,
+                        question:item.question,
+                        ch1:item.ch1,
+                        ch2:item.ch2,
+                        ch3:item.ch3,
+                        ch4:item.ch4,
+                        answer:item.answer,
+                        ref:item.ref,
+                        reply:'0', // เพิ่มมาใหม่ เพื่อเก็บคำตอบ
+                        check:false
+                    }
+                })
+                this.setState({
+                    examLists:exam, waitData:true
+                    }, () => {
+                    this.startTimer() // รับข้อมูลเสร็จ ให้เวลาเริ่มทำงาน
+                })
 
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }
     }
-    componentDidMount(){ // ดึงข้อสอบจากฐานข้อมูล
+    componentDidMount() { // ดึงข้อสอบจากฐานข้อมูล
         this.getExam()
+    }
+    componentWillUnmount() {
+        
     }
     setArr = (e) => {
         if (e === 'next') {
@@ -153,6 +169,7 @@ class Exam extends Component {
         else this.setState({colorBar:'danger'})
     }
     render() {
+        const dataStore = this.props.stateFromStore
         return (
             <Container className="boxExam">
             { 
@@ -160,6 +177,14 @@ class Exam extends Component {
                 <div>
                     <Row>
                         <Col lg="12" className="text-center mb-2">
+                        { 
+                            dataStore.IsLoggedIn?
+                            <div>
+                            <Image src ={dataStore.Profile} roundedCircle style={{width:"60px", height:"60px", border: '2px solid #ddd'}}/>
+                            <div style={{fontSize:'14px', fontWeight:'300', paddingBottom:'10px', paddingTop:'3px'}}>{dataStore.Name}</div>
+                            </div>
+                            :null
+                        } 
                             <p style={{fontSize:"18px", fontWeight:300, margin:"3px", color:"#b7996c"}}>
                             {
                                 this.state.minute !== 0 ?'เวลา '+ this.state.minute +' : '+ this.changeZeroSec(this.state.sec)+' นาที'
@@ -195,7 +220,7 @@ class Exam extends Component {
                             {
                                 this.state.btnCheckAnser
                                 ?<button className="btn btn-outline-success btnFull" onClick = {this.checkAnswer}>ตรวจคำตอบ</button>
-                                :<span style={{fontSize:"14px", fontWeight:300}}>โหมดการแข่งกัน</span>
+                            :<span style={{fontSize:"14px", fontWeight:300}}>{ dataStore.IsLoggedIn?'โหมดแข่งขัน':'โหมดทั่วไป'}</span>
                             }
                         </Col>
                         <Col xs="2" style={{textAlign:"right"}}>
@@ -229,4 +254,16 @@ class Exam extends Component {
     }
 }
 
-export default Exam;
+const mapStateToProps = (state) => {
+    return {
+        stateFromStore : state.data
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        dispatchFromStore : (dataLogin) => {
+            return dispatch({ type:'ADD_DATA', playload:dataLogin })
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps) (Exam)

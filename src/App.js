@@ -15,13 +15,19 @@ import Result from './Result';
 import AboutMe from './AboutMe';
 import Regis from './Regis';
 import Error404 from './Error404';
-
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// redux
+import TestRedux from './TestRedux';
+import { createStore } from 'redux'
+import reducer from './reducer'
+import { Provider } from 'react-redux'
 
 
 function App() {
+  const store = createStore(reducer)
   return (
     <BrowserRouter>
+    <Provider store = {store}>
       <Menu/>
       <div className="container-fluid bg">
         <Switch>
@@ -39,10 +45,13 @@ function App() {
           <Route path="/result" component={Result} />
           <Route path="/me" component={AboutMe} />
           <Route path="/regis" component={Regis} />
+
+          <Route path="/TestRedux" component={TestRedux} />
           <Route component={Error404} />
         </Switch>
       </div>
       <Bar/>
+      </Provider>
     </BrowserRouter>
   );
 }
