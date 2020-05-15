@@ -48,9 +48,9 @@ class Test extends Component {
         this.myRefTopic.current.value !== '0' ? this.setState({showBtnStart:true}) : this.setState({showBtnStart:false})
         this.setState({topic:this.myRefTopic.current.value})
     }
+
     render() {
         return (
-
         <Container className="boxCompetition">
             <Row>
                 <Col sm="12" lg="7">
@@ -109,10 +109,11 @@ class Test extends Component {
                                     </p>
                                     {
                                         this.state.showButton ? 
-                                        <button className="btn btn-outline-success btnFull mb-4">เข้าร่วมแข่งขัน</button>
+                                        <Link to="/regis">
+                                            <button className="btn btn-outline-success btnFull mb-4">เข้าร่วมแข่งขัน</button>
+                                        </Link>
                                         :null
                                     }
-                                    
                                 </div>
                             </Col>
                         </Row>
