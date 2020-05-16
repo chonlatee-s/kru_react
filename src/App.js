@@ -14,6 +14,7 @@ import Exam from './Exam';
 import Result from './Result';
 import AboutMe from './AboutMe';
 import Regis from './Regis';
+import Coffee from './Coffee';
 import Error404 from './Error404';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // redux
@@ -45,6 +46,7 @@ function App() {
           <Route path="/result" component={Result} />
           <Route path="/me" component={AboutMe} />
           <Route path="/regis" component={Regis} />
+          <Route path="/coffee" component={Coffee} />
 
           <Route path="/TestRedux" component={TestRedux} />
           <Route component={Error404} />

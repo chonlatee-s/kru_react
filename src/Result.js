@@ -25,7 +25,7 @@ class Result extends Component {
                 { 
                     dataStore.IsLoggedIn?
                     <div>
-                        <Image src ={dataStore.Profile} roundedCircle style={{width:"60px", height:"60px", border: '2px solid #ddd'}}/>
+                        <Image src ={dataStore.Profile} roundedCircle style={{width:"60px", height:"60px", border: '3px solid #ddd'}}/>
                         <div style={{fontSize:'14px', fontWeight:'300', paddingBottom:'5px', paddingTop:'3px'}}>{dataStore.Name}</div>
                     </div>
                     :null

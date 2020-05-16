@@ -8,6 +8,7 @@ import Spinner from 'react-bootstrap/Spinner'
 import axios from 'axios'
 import Result from './Result'
 import Image from 'react-bootstrap/Image'
+import { Redirect } from 'react-router-dom'
 
 import { connect } from 'react-redux'
 
@@ -22,9 +23,10 @@ class Exam extends Component {
         btnNext:true,
         btnCheckAnser:false,
 
-        minute:1,
+        minute:0,
         sec:59,
-        colorBar:'danger'
+        colorBar:'danger',
+        showText:false
     }
     getExam = () => {
         let dataLogin = {
@@ -37,7 +39,7 @@ class Exam extends Component {
         let exam = []
         if(this.props.match.params.topic==='1'|| this.props.match.params.topic==='2') this.props.dispatchFromStore(dataLogin)
         if(this.props.match.params.topic==='1'|| this.props.match.params.topic==='2' || this.props.match.params.topic==='3'){
-            axios.get(`http://localhost/kru_react_server/getExam.php?topic=${this.props.match.params.topic}`)
+            axios.get(`http://192.168.1.50/kru_react_server/getExam.php?topic=${this.props.match.params.topic}`)
             .then((res)=>{
                 // console.log(res.data)
                 exam = res.data.map((item)=>{
@@ -55,15 +57,16 @@ class Exam extends Component {
                     }
                 })
                 this.setState({
-                    examLists:exam, waitData:true
+                    examLists:exam, waitData:true, minute:this.props.match.params.topic==='3'?24:9
                     }, () => {
                     this.startTimer() // รับข้อมูลเสร็จ ให้เวลาเริ่มทำงาน
                 })
-
             })
             .catch((err)=>{
                 console.log(err)
             })
+        }else{
+            this.setState({showText:true})
         }
     }
     componentDidMount() { // ดึงข้อสอบจากฐานข้อมูล
@@ -170,6 +173,8 @@ class Exam extends Component {
     }
     render() {
         const dataStore = this.props.stateFromStore
+        // ถ้าไม่ได้ล๊อกอิน และเข้าสู่โหมดแข่งขันให้กลับไปหน้าหลัก
+        if(dataStore.IsLoggedIn===false && this.props.match.params.topic==='3') return(<Redirect to='/' />) 
         return (
             <Container className="boxExam">
             { 
@@ -180,14 +185,14 @@ class Exam extends Component {
                         { 
                             dataStore.IsLoggedIn?
                             <div>
-                            <Image src ={dataStore.Profile} roundedCircle style={{width:"60px", height:"60px", border: '2px solid #ddd'}}/>
+                            <Image src ={dataStore.Profile} roundedCircle style={{width:"60px", height:"60px", border: '3px solid #ddd'}}/>
                             <div style={{fontSize:'14px', fontWeight:'300', paddingBottom:'10px', paddingTop:'3px'}}>{dataStore.Name}</div>
                             </div>
                             :null
                         } 
                             <p style={{fontSize:"18px", fontWeight:300, margin:"3px", color:"#b7996c"}}>
                             {
-                                this.state.minute !== 0 ?'เวลา '+ this.state.minute +' : '+ this.changeZeroSec(this.state.sec)+' นาที'
+                                this.state.minute !== 0 ?'เวลา '+ this.changeZeroSec(this.state.minute) +' : '+ this.changeZeroSec(this.state.sec)+' นาที'
                                 : this.state.sec !== 0 ? 'เวลา '+ this.changeZeroSec(this.state.sec) +' วินาที' : 'หมดเวลา'
                             }
                             </p>
@@ -245,7 +250,7 @@ class Exam extends Component {
                             <Spinner animation="grow" variant="info" />
                             <Spinner animation="grow" variant="danger" />
                             <Spinner animation="grow" variant="warning" />
-                            <p style={{fontSize:"16px"}}>กรุณารอสักครู่</p>
+                            <p style={{fontSize:"16px"}}>{this.state.showText?'ไม่พบข้อมูล':'กรุณารอสักครู่'}</p>
                         </Col>
                     </Row>
             }

@@ -15,7 +15,7 @@ class AboutMe extends Component {
     getCredit = () => {
         let creditAll = []
         this.setState ({loadStatus:true})
-        axios.get(`http://localhost/kru_react_server/getTeacher.php`)
+        axios.get(`http://192.168.1.50/kru_react_server/getTeacher.php`)
         .then((res)=>{
             creditAll = res.data.map((item)=>{
                 return {
@@ -40,7 +40,7 @@ class AboutMe extends Component {
                         <h5 className="topic_sec">เราจะสร้างสรรค์และพัฒนาสิ่งดี ๆ ให้กับสังคมต่อไป</h5>
                     </Col>
                 </Row>
-                <Row className="text-center" style={{paddingTop:"50px"}}>
+                <Row style={{paddingTop:"50px"}}>
                     <Col lg="12">
                         <div className="boxText">
                             <p>

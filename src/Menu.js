@@ -14,31 +14,31 @@ function Menu() {
                 </button>
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul className="navbar-nav menu mx-auto">
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
                             <NavLink to="/how" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>เกณฑ์การสอบ</NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
                             <NavLink to="/guidelines" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>แนวข้อสอบ</NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
                             <NavLink to="/file" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>ไฟล์เอกสาร</NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
                             <NavLink to="/competition" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>ผลการแข่งขัน</NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
                             <NavLink to="/magic" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>เซียมซีเสี่ยงทาย</NavLink>
                         </li>
                     </ul>
-                    <div className="navbar-nav ml-md-auto mb-2">
-                        <button className="btn  btnFull" style={{backgroundColor:"#fdefef"}}>
-                            <FontAwesomeIcon icon={faCoffee} style={{color:"#ff5f5f", fontSize:"16px",}}/>
-                            <span style={{color:"#ff5f5f",fontSize:"14px", verticalAlign:"text-top"}}> Buy Me a Coffee</span>
-                        </button>
-                         
-                        
+                    <div className="navbar-nav ml-md-auto mb-2" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <NavLink to="/coffee">
+                            <button className="btn  btnFull" style={{backgroundColor:"#fdefef"}}>
+                                <FontAwesomeIcon icon={faCoffee} style={{color:"#ff5f5f", fontSize:"16px",}}/>
+                                <span style={{color:"#ff5f5f",fontSize:"14px", verticalAlign:"text-top"}}> Buy Me a Coffee</span>
+                            </button>
+                        </NavLink>
                     </div>
-                    <div className="navbar-nav ml-md-auto mb-2">
+                    <div className="navbar-nav ml-md-auto mb-2" data-toggle="collapse" data-target="#collapsibleNavbar">
                         <NavLink to="/test"><button className="btn btn-primary btnFull">ฝึกทำข้อสอบ</button></NavLink>
                     </div>
                 </div>
