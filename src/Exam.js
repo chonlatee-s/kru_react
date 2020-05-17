@@ -12,6 +12,7 @@ import { Redirect } from 'react-router-dom'
 
 import { connect } from 'react-redux'
 
+
 class Exam extends Component {
     state = {
         waitResult:false,
@@ -39,7 +40,7 @@ class Exam extends Component {
         let exam = []
         if(this.props.match.params.topic==='1'|| this.props.match.params.topic==='2') this.props.dispatchFromStore(dataLogin)
         if(this.props.match.params.topic==='1'|| this.props.match.params.topic==='2' || this.props.match.params.topic==='3'){
-            axios.get(`http://192.168.1.50/kru_react_server/getExam.php?topic=${this.props.match.params.topic}`)
+            axios.get(`http://localhost/kru_react_server/getExam.php?topic=${this.props.match.params.topic}`)
             .then((res)=>{
                 // console.log(res.data)
                 exam = res.data.map((item)=>{
@@ -133,6 +134,25 @@ class Exam extends Component {
             if(item.answer === item.reply) result += 1
         })
         this.setState({score : result, waitResult:true, waitData:false})
+
+        // ส่งข้อมูลไปฐานข้อมูล
+        const dataStore = this.props.stateFromStore
+        let qs = require('qs');
+        let data={
+            id:dataStore.UserId,
+            name:dataStore.Name,
+            profile:dataStore.Profile,
+            score:result
+        }
+
+        axios.post('http://localhost/kru_react_server/sentUser.php', qs.stringify(data))
+        .then((res)=>{
+            console.log(res)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+
     }
     startTimer = () => {
         this.clockCall = setInterval(() => {

@@ -18,7 +18,7 @@ class Magic extends Component {
         this.setState ({loadStatus:true})
         let x = Math.floor((Math.random() * 28) + 1);
         setTimeout(function(){ 
-            axios.get(`http://192.168.1.50/kru_react_server/getPredict.php?data=${x}`)
+            axios.get(`http://localhost/kru_react_server/getPredict.php?data=${x}`)
             .then((res)=>{
                 this.setState({id:res.data.id, result:res.data.result, open:false, loadStatus:false})
             })

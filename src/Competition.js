@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Competitor from './Competitor';
+import { Link } from 'react-router-dom';
 
 function Competition() {
     return (
@@ -32,7 +33,9 @@ function Competition() {
                     </Row>
                     <Row>
                         <Col lg="12">
-                          <button className="btn btn-outline-success btnFull">เข้าร่วมแข่งขัน</button> &nbsp;
+                          <Link to="/regis">
+                            <button className="btn btn-outline-success btnFull">เข้าร่วมแข่งขัน</button> &nbsp;
+                          </Link>
                         </Col>
                     </Row>
                 </Container>
