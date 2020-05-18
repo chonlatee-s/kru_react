@@ -38,10 +38,10 @@ class Competitor extends Component {
             this.state.dataUser.map((item,index)=>{
               return (
                 <Row key={index}>
-                  <Col xs="2" style={{marginTop:'6px'}}>
+                  <Col xs="2" style={{marginTop:'8px'}}>
                     <Image src ={item.profile} roundedCircle style={{width:"40px", height:"40px", border: '0px solid #ddd'}}/>
                   </Col>
-                  <Col xs="10" style={{paddingLeft:'0px'}}>
+                  <Col xs="10" style={{paddingRight:'0px'}}>
                     <label style={{ fontSize: "14px", fontWeight: 200 }}>{item.name}</label>
                     <ProgressBar striped variant={ item.colorBar } now={(item.score*100)/25} label={`${(item.score*100)/25}%`} style={{ height: "10px" }} />
                   </Col>
