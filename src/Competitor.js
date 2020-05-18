@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Container from 'react-bootstrap/Container'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -41,7 +40,7 @@ class Competitor extends Component {
                   <Col xs="2" style={{marginTop:'8px'}}>
                     <Image src ={item.profile} roundedCircle style={{width:"40px", height:"40px", border: '0px solid #ddd'}}/>
                   </Col>
-                  <Col xs="10" style={{paddingRight:'0px'}}>
+                  <Col xs="10" style={{paddingLeft:'0px'}} >
                     <label style={{ fontSize: "14px", fontWeight: 200 }}>{item.name}</label>
                     <ProgressBar striped variant={ item.colorBar } now={(item.score*100)/25} label={`${(item.score*100)/25}%`} style={{ height: "10px" }} />
                   </Col>

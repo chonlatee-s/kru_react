@@ -22,7 +22,7 @@ import TestRedux from './TestRedux';
 import { createStore } from 'redux'
 import reducer from './reducer'
 import { Provider } from 'react-redux'
-
+import TestAdd from './TestAdd';
 
 function App() {
   const store = createStore(reducer)
@@ -47,6 +47,7 @@ function App() {
           <Route path="/me" component={AboutMe} />
           <Route path="/regis" component={Regis} />
           <Route path="/coffee" component={Coffee} />
+          <Route path="/testAdd" component={TestAdd} />
 
           <Route path="/TestRedux" component={TestRedux} />
           <Route component={Error404} />

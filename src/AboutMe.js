@@ -15,7 +15,7 @@ class AboutMe extends Component {
     getCredit = () => {
         let creditAll = []
         this.setState ({loadStatus:true})
-        axios.get(`http://192.168.1.50/kru_react_server/getTeacher.php`)
+        axios.get(`http://localhost/kru_react_server/getTeacher.php`)
         .then((res)=>{
             creditAll = res.data.map((item)=>{
                 return {

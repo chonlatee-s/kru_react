@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col'
 import Alert from 'react-bootstrap/Alert'
 
 class Coffee extends Component {
-
     render() {
         return (
             <Container className="boxMagic">
@@ -19,7 +18,7 @@ class Coffee extends Component {
                     <Col lg="3" md="12">
                         <Alert style={{backgroundColor:"#00a5df"}}>
                             <Alert.Heading style={{color:"#ffffff", textAlign:'center'}}>ธนาคารกรุงไทย</Alert.Heading>
-                            <p style={{color:"#ffffff",marginBottom:'0px'}}>Prompt Pay  082-781-8941</p>
+                            <p style={{color:"#ffffff",marginBottom:'0px'}}>เลขบัญชี 317-0-125591</p>
                             <p style={{color:"#ffffff"}}>ชื่อบัญชี  ชลธี สินสาตร์</p>
                         </Alert>
                     </Col>
@@ -31,7 +30,7 @@ class Coffee extends Component {
                                 ถ้าคิดว่าเว็บไซต์นี้มีประโยชน์ และอยากสนับสนุนค่า "กาแฟหรือชานมไข่มุก" สักแก้ว 
                                 ก็ขอขอบคุณมากครับ :)
                             </p>
-                            <p style={{fontSize:'14px', fontWeight:'300'}}>ป.ล. ถ้ามีโฆษณามากวนใจนิดหน่อย อย่าพึ่งรำคาญกันนะ เพราะนั่นคือค่ากาแฟและชานมไข่มุกเช่นกัน ฮ่า ๆ</p>
+                            <p style={{fontSize:'14px', fontWeight:'300'}}>ป.ล. ขอให้ความฝันทุกคนเป็นจริง จากใจดวงน้อย ๆ ของแอดมิน</p>
                         </div>
                     </Col>
                 </Row>
