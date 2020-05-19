@@ -65,7 +65,7 @@ class Regis extends Component {
                             />
                             <p style={{marginTop:'25px',fontSize:'12px'}}><a href="https://drive.google.com/open?id=17X5HR4hc1T8sZ0e2PWI4_hWdQLllHaglS4Lfn2VxG9s" target="_blank" rel="noopener noreferrer">นโยบายความเป็นส่วนตัว</a></p>
                             <p style={{marginTop:'0px',fontSize:'12px'}}>
-                                โหมดแข่งขันอยู่ในช่วงทดลองใช้งาน อาจจะทำให้มีข้อผิดพลาดในการลงทะเบียนได้
+                                โหมดแข่งขันอยู่ในช่วงทดลองใช้งาน อาจจะมีข้อผิดพลาดในการลงทะเบียนได้
                                 ทั้งนี้ท่านสามารถเข้าใช้งานในโหมดทั่วไปได้ตามปรกติ
                             </p>
                             {/* <FacebookLogin

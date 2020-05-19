@@ -8,11 +8,28 @@ import { Link } from 'react-router-dom';
 function Competition() {
     return (
         <Container className="boxCompetition">
-          <Row>
-            <Col sm="12" lg="5" className="mb-4 text-center">
+          <Row className="text-center">
+            <Col lg="12">
+              <h1>
+                <span className="topicTop">จัดอันดับการแข่งกัน</span>
+              </h1>
+              <h5 className="topic_sec">เรียงตามวันเวลา และคะแนนสูงสุด 10 คน</h5>
+            </Col>
+          </Row>
+          <Row style={{marginTop:'50px'}}>
+            <Col lg="12" className="mx-auto">
                 <Competitor/>
             </Col>
-            <Col sm="12" lg="7">
+          </Row>
+          <Row style={{marginTop:'50px'}} className="text-center">
+            <Col lg="12" className="mb-4 mx-auto">
+              <Link to="/regis">
+                <button className="btn btn-outline-success btnFull">เข้าร่วมแข่งขัน</button> &nbsp;
+              </Link>
+            </Col>
+          </Row>
+         
+            {/* <Col sm="12" lg="7">
                 <Container fluid>
                     <Row className="row">
                       <Col lg="12">
@@ -39,8 +56,8 @@ function Competition() {
                         </Col>
                     </Row>
                 </Container>
-            </Col>
-          </Row>
+            </Col> */}
+       
       </Container>
     );
 }
