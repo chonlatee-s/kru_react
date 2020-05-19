@@ -23,7 +23,7 @@ export default class File extends Component {
     }
     receivedData() {
         axios
-            .get(`http://localhost/kru_react_server/getFile.php`)
+            .get(`./getFile.php`)
             .then(res => {
 
                 const data = res.data;

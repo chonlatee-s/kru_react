@@ -18,7 +18,7 @@ class Magic extends Component {
         this.setState ({loadStatus:true})
         let x = Math.floor((Math.random() * 28) + 1);
         setTimeout(function(){ 
-            axios.get(`http://localhost/kru_react_server/getPredict.php?data=${x}`)
+            axios.get(`./getPredict.php?data=${x}`)
             .then((res)=>{
                 this.setState({id:res.data.id, result:res.data.result, open:false, loadStatus:false})
             })
@@ -85,7 +85,6 @@ class Magic extends Component {
                             <div className="boxText">
                                 <span style={{fontSize:"24px",fontWeight:400}}>คุณได้ใบที่ {this.state.id}</span>
                                 <p>{this.state.result}</p>
-                                <hr style={{borderColor:"#7c8dac", borderWidth:0.1, opacity:0.5 }}/>
                                 <span style={{fontSize:"14px"}}>ที่มา วัดหนองบัว จังหวัดอุบลราชธานี</span>
                             </div>
                             <br/>

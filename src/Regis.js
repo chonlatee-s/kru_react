@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import GoogleLogin from 'react-google-login';
 // import FacebookLogin from 'react-facebook-login';
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+// import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import { Redirect } from 'react-router-dom'
 
 import { connect } from 'react-redux'
@@ -48,21 +48,27 @@ class Regis extends Component {
                     <Row className="justify-content-md-center text-center">
                         <Col md="6">
                             <GoogleLogin
-                                clientId="775805108328-b9q6up7n1aa576it5dgr1kn1acisdkp0.apps.googleusercontent.com"
+                                clientId="254303991922-di1i2i7bcp7fuvtp8ib5a7uirsq2kopm.apps.googleusercontent.com"
                                 onSuccess={this.responseGoogle}
-                                render={renderProps => (
-                                    <button onClick={renderProps.onClick} style={{
-                                        fontSize:'19px',
-                                        backgroundColor:"#ff5f5f",
-                                        color:"#ffffff",
-                                        border: 'none',
-                                        padding:'10px',
-                                        width:'60%'
-                                    }}>ลงทะเบียนด้วย Google</button>
-                                )}
+                                buttonText="ลงทะเบียนด้วย Google"
+                                // render={renderProps => (
+                                //     <button onClick={renderProps.onClick} style={{
+                                //         fontSize:'19px',
+                                //         backgroundColor:"#ff5f5f",
+                                //         color:"#ffffff",
+                                //         border: 'none',
+                                //         padding:'10px',
+                                //         width:'100%',
+                                        
+                                //     }}>ลงทะเบียนด้วย Google</button>
+                                // )}
                             />
-                            <p style={{marginTop:'15px'}}>หรือ</p>
-                            <FacebookLogin
+                            <p style={{marginTop:'25px',fontSize:'12px'}}><a href="https://drive.google.com/open?id=17X5HR4hc1T8sZ0e2PWI4_hWdQLllHaglS4Lfn2VxG9s" target="_blank" rel="noopener noreferrer">นโยบายความเป็นส่วนตัว</a></p>
+                            <p style={{marginTop:'0px',fontSize:'12px'}}>
+                                โหมดแข่งขันอยู่ในช่วงทดลองใช้งาน อาจจะทำให้มีข้อผิดพลาดในการลงทะเบียนได้
+                                ทั้งนี้ท่านสามารถเข้าใช้งานในโหมดทั่วไปได้ตามปรกติ
+                            </p>
+                            {/* <FacebookLogin
                                 appId="761688894366809"
                                 fields="name,email,picture"
                                 callback={this.responseFacebook} 
@@ -76,7 +82,7 @@ class Regis extends Component {
                                         width:'60%'
                                     }}>ลงทะเบียนด้วย Facebook</button>
                                 )}
-                            />
+                            /> */}
                         </Col>
                     </Row>
                 </Container>

@@ -75,7 +75,7 @@ class Test extends Component {
                                     </Form.Group>
                                     {
                                         this.state.showBtnStart?
-                                        <Link to={`/Exam/${this.state.topic}`}><button className="btn btn-outline-success btnFull" type="button" ref={this.myRefBtnStart}>เริ่มทำข้อสอบ</button></Link>
+                                        <Link to={`/exam/${this.state.topic}`}><button className="btn btn-outline-success btnFull" type="button" ref={this.myRefBtnStart}>เริ่มทำข้อสอบ</button></Link>
                                         :null
                                     }
                                 </Form>

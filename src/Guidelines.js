@@ -23,7 +23,7 @@ export default class Guidlines extends Component {
     }
     receivedData() {
         axios
-            .get(`http://localhost/kru_react_server/getGuideline.php`)
+            .get(`./getGuideline.php`)
             .then(res => {
 
                 const data = res.data;

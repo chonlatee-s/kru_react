@@ -40,7 +40,7 @@ class Exam extends Component {
         let exam = []
         if(this.props.match.params.topic==='1'|| this.props.match.params.topic==='2') this.props.dispatchFromStore(dataLogin)
         if(this.props.match.params.topic==='1'|| this.props.match.params.topic==='2' || this.props.match.params.topic==='3'){
-            axios.get(`http://localhost/kru_react_server/getExam.php?topic=${this.props.match.params.topic}`)
+            axios.get(`${window.location.origin}/getExams.php?topic=${this.props.match.params.topic}`)
             .then((res)=>{
                 // console.log(res.data)
                 exam = res.data.map((item)=>{
@@ -144,15 +144,18 @@ class Exam extends Component {
             profile:dataStore.Profile,
             score:result
         }
-
-        axios.post('http://localhost/kru_react_server/sentUser.php', qs.stringify(data))
-        .then((res)=>{
-            console.log(res)
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
-
+        if(this.props.match.params.topic==='3'){
+            console.log('do')
+            axios.post(`${window.location.origin}/sentUser.php`, qs.stringify(data))
+            .then((res)=>{
+                // console.log(res)
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }else{
+            console.log('do it')
+        }
     }
     startTimer = () => {
         this.clockCall = setInterval(() => {
