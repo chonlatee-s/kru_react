@@ -11,7 +11,7 @@ class Competitor extends Component {
   }
 
   getUser = () => {
-    axios.get(`http://ครูผู้ช่วย.com/getUser.php`)
+    axios.get(`./getUser.php`)
       .then((res) => {
         let data = res.data.map((item) => {
           return {
@@ -38,14 +38,14 @@ class Competitor extends Component {
           {
             this.state.dataUser.map((item, index) => {
               return (
-                <div>
+                <div key={index}>
                   {
                     index <= 4 ?
-                      <Row key={index}>
-                        <Col xs="1" style={{ marginTop: '8.5px'}}>
+                      <Row>
+                        <Col xs="2" style={{ marginTop: '8.5px',paddingRight:'0'}}>
                           <Image src={item.profile} roundedCircle style={{ width: "30px", height: "30px", border: '0px solid #ddd' }} />
                         </Col>
-                        <Col xs="11">
+                        <Col xs="10" style={{paddingLeft:'0'}}>
                           {
 
                             index === 0 ?
@@ -57,6 +57,22 @@ class Competitor extends Component {
                                   <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z" />
                                 </svg>
                                 <label style={{ fontSize: "14px", color: 'goldenrod', fontWeight: 300 }}>{item.name}</label>
+                              </div>
+                              :index === 1 ?
+                              <div>
+                                <svg style={{color:'#808B96'}} className="bi bi-award-fill" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M8 0l1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
+                                  <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                                </svg>
+                                <label style={{ fontSize: "14px", color: '#808B96', fontWeight: 300 }}>{item.name}</label>
+                              </div>
+                              :index === 2 ?
+                              <div>
+                                <svg style={{color:'#CD6155'}} className="bi bi-award-fill" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M8 0l1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
+                                  <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                                </svg>
+                                <label style={{ fontSize: "14px", color: '#CD6155', fontWeight: 300 }}>{item.name}</label>
                               </div>
                               :
                               <label style={{ fontSize: "14px", fontWeight: 200 }}>{item.name}</label>
@@ -77,14 +93,14 @@ class Competitor extends Component {
           {
             this.state.dataUser.map((item, index) => {
               return (
-                <div>
+                <div key={index}>
                   {
                     index >= 5 ?
-                      <Row key={index}>
-                        <Col xs="1" style={{ marginTop: '8.5px'}}>
+                      <Row>
+                        <Col xs="2" style={{ marginTop: '8.5px',paddingRight:'0'}}>
                           <Image src={item.profile} roundedCircle style={{ width: "30px", height: "30px", border: '0px solid #ddd' }} />
                         </Col>
-                        <Col xs="11">
+                        <Col xs="10" style={{paddingLeft:'0'}}>
                           <label style={{ fontSize: "14px", fontWeight: 200 }}>{item.name}</label>
                           <ProgressBar striped variant={item.colorBar} now={(item.score * 100) / 25} label={`${(item.score * 100) / 25}%`} style={{ height: "8px" }} />
                         </Col>

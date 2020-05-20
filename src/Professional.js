@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Alert from 'react-bootstrap/Alert'
+import AdSense from 'react-adsense';
 
 class Professional extends Component {
     state = {
@@ -177,9 +178,14 @@ class Professional extends Component {
                         </div>
                     </Col>
                 </Row>
+                <AdSense.Google
+                    client='pub-5901161227057601'
+                    slot='4780951832'
+                    style={{ display: 'block' }}
+                    layout='in-article'
+                    format='fluid'
+                />
             </Container>
-
-
         );
     }
 }

@@ -128,7 +128,7 @@ class Test extends Component {
             <Row>
                 <Container fluid>
                     <Col lg="12"className="mb-4" style={{paddingTop:"100px"}}>
-                        <p className="topic_sec" style={{textAlign:"left"}}>ผลการแข่งขัน</p>
+                        <p className="topic_sec" style={{textAlign:"left"}}>ผลการแข่งขัน เรียงตามวันเวลา และคะแนน 10 คน</p>
                         <Competitor/>
                     </Col>
                 </Container>
