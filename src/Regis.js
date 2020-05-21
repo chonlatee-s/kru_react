@@ -58,19 +58,18 @@ class Regis extends Component {
                                 //         color:"#ffffff",
                                 //         border: 'none',
                                 //         padding:'10px',
-                                //         width:'100%',
+                                //         width:'60%',
                                         
                                 //     }}>ลงทะเบียนด้วย Google</button>
                                 // )}
                             />
-                            <p style={{marginTop:'25px',fontSize:'12px'}}><Link to='/Policy'>นโยบายความเป็นส่วนตัว</Link></p>
-                            <p style={{marginTop:'0px',fontSize:'12px'}}>
-                                โหมดแข่งขันอยู่ในช่วงทดลองใช้งาน หากไม่สามารถลงทะเบียนได้ให้ทำข้อสอบในโหมดทั่วไป
-                            </p>
+                            {/* <p style={{marginTop:'18px'}}>หรือ</p> */}
                             {/* <FacebookLogin
                                 appId="761688894366809"
                                 fields="name,email,picture"
                                 callback={this.responseFacebook} 
+                               
+                               
                                 render={renderProps => (
                                     <button onClick={renderProps.onClick} style={{
                                         fontSize:'19px',
@@ -82,6 +81,11 @@ class Regis extends Component {
                                     }}>ลงทะเบียนด้วย Facebook</button>
                                 )}
                             /> */}
+                            <p style={{marginTop:'25px',fontSize:'12px'}}><Link to='/Policy'>นโยบายความเป็นส่วนตัว</Link></p>
+                            <p style={{marginTop:'0px',fontSize:'12px'}}>
+                                โหมดแข่งขันอยู่ในช่วงทดลองใช้งาน หากไม่สามารถลงทะเบียนได้ให้ทำข้อสอบในโหมดทั่วไป
+                            </p>
+                            
                         </Col>
                     </Row>
                 </Container>

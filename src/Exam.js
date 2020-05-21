@@ -38,12 +38,19 @@ class Exam extends Component {
             type:''
         }
         let exam = []
+        var base64 = require('base-64');
+        var utf8 = require('utf8');
+
         if(this.props.match.params.topic==='1'|| this.props.match.params.topic==='2') this.props.dispatchFromStore(dataLogin)
         if(this.props.match.params.topic==='1'|| this.props.match.params.topic==='2' || this.props.match.params.topic==='3'){
             axios.get(`${window.location.origin}/getExams.php?topic=${this.props.match.params.topic}`)
             .then((res)=>{
-                // console.log(res.data)
-                exam = res.data.map((item)=>{
+                
+                var bytes = base64.decode(res.data);
+                var text = utf8.decode(bytes);
+                var data = JSON.parse(text)
+
+                exam = data.map((item)=>{
                     return {
                         id:item.id,
                         question:item.question,
