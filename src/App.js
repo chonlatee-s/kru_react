@@ -15,6 +15,7 @@ import Result from './Result';
 import AboutMe from './AboutMe';
 import Regis from './Regis';
 import Coffee from './Coffee';
+import Policy from './Policy';
 import Error404 from './Error404';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // redux
@@ -50,6 +51,7 @@ function App() {
           <Route path="/testAdd" component={TestAdd} />
 
           <Route path="/TestRedux" component={TestRedux} />
+          <Route path="/Policy" component={Policy} />
           <Route component={Error404} />
         </Switch>
       </div>

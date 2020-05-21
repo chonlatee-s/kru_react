@@ -6,7 +6,7 @@ import GoogleLogin from 'react-google-login';
 // import FacebookLogin from 'react-facebook-login';
 // import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import { Redirect } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 
 class Regis extends Component {
@@ -63,10 +63,9 @@ class Regis extends Component {
                                 //     }}>ลงทะเบียนด้วย Google</button>
                                 // )}
                             />
-                            <p style={{marginTop:'25px',fontSize:'12px'}}><a href="https://drive.google.com/open?id=17X5HR4hc1T8sZ0e2PWI4_hWdQLllHaglS4Lfn2VxG9s" target="_blank" rel="noopener noreferrer">นโยบายความเป็นส่วนตัว</a></p>
+                            <p style={{marginTop:'25px',fontSize:'12px'}}><Link to='/Policy'>นโยบายความเป็นส่วนตัว</Link></p>
                             <p style={{marginTop:'0px',fontSize:'12px'}}>
-                                โหมดแข่งขันอยู่ในช่วงทดลองใช้งาน อาจจะมีข้อผิดพลาดในการลงทะเบียนได้
-                                ทั้งนี้ท่านสามารถเข้าใช้งานในโหมดทั่วไปได้ตามปรกติ
+                                โหมดแข่งขันอยู่ในช่วงทดลองใช้งาน หากไม่สามารถลงทะเบียนได้ให้ทำข้อสอบในโหมดทั่วไป
                             </p>
                             {/* <FacebookLogin
                                 appId="761688894366809"

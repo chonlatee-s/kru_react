@@ -60,7 +60,7 @@ class Test extends Component {
                         <Row>
                             <Col lg="12">
                                 <h1 className="topicTop">ฝึกทำข้อสอบ</h1>
-                                <h5 className="topic_sec" style={{textAlign:"left"}}>จะทำคนเดียวหรือแข่งกับคนอื่น ๆ ก็เลือกโหมดได้ตามใจชอบ </h5>
+                                <h5 className="topic_sec" style={{textAlign:"left"}}>จะทำคนเดียวหรือแข่งกับคนอื่น เลือกโหมดได้ตามใจชอบ </h5>
                             </Col>
                         </Row>
                         <Row style={{paddingTop:"20px"}}>
@@ -127,8 +127,8 @@ class Test extends Component {
             </Row>
             <Row>
                 <Container fluid>
-                    <Col lg="12"className="mb-4" style={{paddingTop:"100px"}}>
-                        <p className="topic_sec" style={{textAlign:"left"}}>ผลการแข่งขัน เรียงตามวันเวลา และคะแนน 10 คน</p>
+                    <Col lg="12"className="mb-4" style={{paddingTop:"150px"}}>
+                        <p className="text-center" style={{textAlign:"left"}}>ผลการแข่งขัน</p>
                         <Competitor/>
                     </Col>
                 </Container>

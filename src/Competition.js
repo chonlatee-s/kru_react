@@ -11,9 +11,9 @@ function Competition() {
           <Row className="text-center">
             <Col lg="12">
               <h1>
-                <span className="topicTop">จัดอันดับการแข่งกัน</span>
+                <span className="topicTop">จัดอันดับการแข่งขัน</span>
               </h1>
-              <h5 className="topic_sec">เรียงตามวันเวลา และคะแนน 10 คน</h5>
+              <h5 className="topic_sec">เรียงตามวันเวลา และคะแนน 9 คน</h5>
             </Col>
           </Row>
           <Row style={{marginTop:'50px'}}>
