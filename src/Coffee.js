@@ -11,7 +11,7 @@ class Coffee extends Component {
                 <Row>
                     <Col lg="12">
                         <h1 className="topicTop text-center">By Me a Coffee</h1>
-                        <h5 className="topic_sec">เราจะสร้างสรรค์สิ่งดี ๆ ให้กับสังคมต่อไป "ขอให้ฝันทุกคนเป็นจริง"</h5>
+                        <h5 className="topic_sec">เราจะสร้างสรรค์สิ่งดี ๆ ให้กับสังคมต่อไป</h5>
                     </Col>
                 </Row>
                 <Row style={{paddingTop:"50px"}}>

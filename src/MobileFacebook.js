@@ -5,10 +5,12 @@ import Col from 'react-bootstrap/Col'
 import GoogleLogin from 'react-google-login';
 // import FacebookLogin from 'react-facebook-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+// import { FacebookLogin } from 'react-facebook-login-component';
 import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 
-class Regis extends Component {
+class MobileFacebook extends Component {
     responseGoogle = (res) => {
         let dataLogin = {
             UserId:res.googleId,
@@ -50,24 +52,25 @@ class Regis extends Component {
                                 clientId="254303991922-di1i2i7bcp7fuvtp8ib5a7uirsq2kopm.apps.googleusercontent.com"
                                 onSuccess={this.responseGoogle}
                                 buttonText="ลงทะเบียนด้วย Google"
-                                render={renderProps => (
-                                    <button onClick={renderProps.onClick} style={{
-                                        fontSize:'19px',
-                                        backgroundColor:"#ff5f5f",
-                                        color:"#ffffff",
-                                        border: 'none',
-                                        padding:'10px',
-                                        width:'60%',
+                                // render={renderProps => (
+                                //     <button onClick={renderProps.onClick} style={{
+                                //         fontSize:'19px',
+                                //         backgroundColor:"#ff5f5f",
+                                //         color:"#ffffff",
+                                //         border: 'none',
+                                //         padding:'10px',
+                                //         width:'60%',
                                         
-                                    }}>ลงทะเบียนด้วย Google</button>
-                                )}
+                                //     }}>ลงทะเบียนด้วย Google</button>
+                                // )}
                             />
                             <p style={{marginTop:'18px'}}>หรือ</p>
                             <FacebookLogin
                                 appId="761688894366809"
                                 fields="name,email,picture"
                                 callback={this.responseFacebook} 
-                                isMobile={false}
+                               
+                               
                                 render={renderProps => (
                                     <button onClick={renderProps.onClick} style={{
                                         fontSize:'19px',
@@ -79,7 +82,21 @@ class Regis extends Component {
                                     }}>ลงทะเบียนด้วย Facebook</button>
                                 )}
                             />
-                            {/* <p style={{marginTop:'25px',fontSize:'12px',fontWeight:'300'}}> ข้อแนะนำ การลงทะเบียนด้วย Facebook ให้ทำผ่านเว็บบราวเซอร์บนคอมพิวเตอร์เท่านั้น เช่น Google Chorme, Microsoft Edge</p> */}
+
+                    {/* <FacebookLogin socialId="761688894366809"
+                       language="en_US"
+                       scope="public_profile,email"
+                       responseHandler={this.responseFacebook}
+                       xfbml={true}
+                       fields="id,email,name"
+                       version="v7.0"
+                       className="facebook-login"
+                       buttonText="Login With Facebook"/> */}
+
+                            <p style={{marginTop:'25px',fontSize:'12px'}}><Link to='/Policy'>นโยบายความเป็นส่วนตัว</Link></p>
+                            <p style={{marginTop:'0px',fontSize:'12px'}}>
+                                โหมดแข่งขันอยู่ในช่วงทดลองใช้งาน หากไม่สามารถลงทะเบียนได้ให้ทำข้อสอบในโหมดทั่วไป
+                            </p>
                             
                         </Col>
                     </Row>
@@ -101,4 +118,4 @@ const mapDispatchToProps = dispatch => {
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps) (Regis)
+export default connect(mapStateToProps, mapDispatchToProps) (MobileFacebook)

@@ -24,6 +24,7 @@ import { createStore } from 'redux'
 import reducer from './reducer'
 import { Provider } from 'react-redux'
 import TestAdd from './TestAdd';
+import MobileFacebook from './MobileFacebook';
 
 function App() {
   const store = createStore(reducer)
@@ -52,6 +53,7 @@ function App() {
 
           <Route path="/TestRedux" component={TestRedux} />
           <Route path="/Policy" component={Policy} />
+          <Route path="/MobileFacebook" component={MobileFacebook} />
           <Route component={Error404} />
         </Switch>
       </div>
