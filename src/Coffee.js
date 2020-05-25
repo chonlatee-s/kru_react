@@ -11,7 +11,7 @@ class Coffee extends Component {
                 <Row>
                     <Col lg="12">
                         <h1 className="topicTop text-center">By Me a Coffee</h1>
-                        <h5 className="topic_sec">เราจะสร้างสรรค์สิ่งดี ๆ ให้กับสังคมต่อไป</h5>
+                        <h5 className="topic_sec">เราจะสร้างสรรค์สิ่งดี ๆ ให้กับสังคมต่อไป </h5>
                     </Col>
                 </Row>
                 <Row style={{paddingTop:"50px"}}>
@@ -30,7 +30,7 @@ class Coffee extends Component {
                                 ถ้าคิดว่าเว็บไซต์นี้มีประโยชน์ และอยากสนับสนุนค่า "กาแฟหรือชานมไข่มุก" สักแก้ว 
                                 ก็ขอขอบคุณมากครับ :)
                             </p>
-                            <p style={{fontSize:'14px', fontWeight:'300'}}>ป.ล. ขอให้ความฝันทุกคนเป็นจริง จากใจดวงน้อย ๆ ของแอดมิน</p>
+                            <p style={{fontSize:'14px', fontWeight:'300'}}>ป.ล. หากโฆษณาขึ้นมากวนใจ อย่าพึ่งรำคาญกันนะ นั่นเป็นค่าขนมแอดมินเอง :D</p>
                         </div>
                     </Col>
                 </Row>
