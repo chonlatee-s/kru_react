@@ -11,6 +11,8 @@ import Image from 'react-bootstrap/Image'
 import { Redirect } from 'react-router-dom'
 
 import { connect } from 'react-redux'
+import AdSense from "react-adsense";
+import {Advertisement} from "semantic-ui-react";
 
 
 class Exam extends Component {
@@ -152,7 +154,6 @@ class Exam extends Component {
             score:result
         }
         if(this.props.match.params.topic==='3'){
-            console.log('do')
             axios.post(`${window.location.origin}/sentUser.php`, qs.stringify(data))
             .then((res)=>{
                 // console.log(res)
@@ -210,6 +211,15 @@ class Exam extends Component {
             { 
                 this.state.waitData ?
                 <div>
+                     <Advertisement unit="leaderboard">
+                        <AdSense.Google
+                            client="ca-pub-5901161227057601"
+                            format=""
+                            slot="4780951832"
+                            style={{ display: "inline-block", height: 90, width: 500 }}
+                        />
+                    </Advertisement>
+
                     <Row>
                         <Col lg="12" className="text-center mb-2">
                         { 
