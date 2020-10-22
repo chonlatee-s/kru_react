@@ -21,7 +21,7 @@ function Menu() {
                             <NavLink to="/guidelines" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>แนวข้อสอบ</NavLink>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
-                            <NavLink to="/file" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>ไฟล์เอกสาร</NavLink>
+                            <NavLink to="/joblist" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>หางานครูผู้สอน</NavLink>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
                             <NavLink to="/competition" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>ผลการแข่งขัน</NavLink>

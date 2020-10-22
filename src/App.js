@@ -25,6 +25,7 @@ import reducer from './reducer'
 import { Provider } from 'react-redux'
 import TestAdd from './TestAdd';
 import MobileFacebook from './MobileFacebook';
+import JobList from './JobList';
 
 function App() {
   const store = createStore(reducer)
@@ -42,6 +43,7 @@ function App() {
           <Route path="/professional" component={Professional} />
           <Route path="/tutorial" component={Tutorial} />
           <Route path="/file" component={File} />
+          <Route path="/joblist" component={JobList} />
           <Route path="/guidelines" component={Guidelines} />
           <Route path="/test" component={Test} />
           <Route path="/exam/:topic" component={Exam} />
