@@ -211,15 +211,14 @@ class Exam extends Component {
             { 
                 this.state.waitData ?
                 <div>
-                     <Advertisement unit="leaderboard">
-                        <AdSense.Google
-                            client="ca-pub-5901161227057601"
-                            format=""
-                            slot="4780951832"
-                            style={{ display: "inline-block", height: 90, width: 500 }}
-                        />
-                    </Advertisement>
-
+                <Advertisement unit="leaderboard">
+                    <AdSense.Google
+                        client="ca-pub-5901161227057601"
+                        format=""
+                        slot="4780951832"
+                        style={{ display: "inline-block", height: 90, width: 500 }}
+                    />
+                </Advertisement>
                     <Row>
                         <Col lg="12" className="text-center mb-2">
                         { 

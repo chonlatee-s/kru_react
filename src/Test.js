@@ -8,6 +8,11 @@ import { Link } from 'react-router-dom';
 import book from './img/book.png';
 import Image from 'react-bootstrap/Image'
 
+
+// import AdSense from "react-adsense";
+// import {Advertisement} from "semantic-ui-react";
+
+
 class Test extends Component {
     state = {
         showButton:false,
@@ -54,6 +59,16 @@ class Test extends Component {
     render() {
         return (
         <Container className="boxCompetition">
+            {/* <Row>
+                <Advertisement unit="leaderboard">
+                    <AdSense.Google
+                        client="ca-pub-5901161227057601"
+                        format=""
+                        slot="4780951832"
+                        style={{ display: "inline-block", height: 90, width: 500 }}
+                    />
+                </Advertisement>
+            </Row> */}
             <Row>
                 <Col sm="12" lg="7">
                     <Container fluid>

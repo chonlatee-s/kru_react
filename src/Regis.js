@@ -49,6 +49,8 @@ class Regis extends Component {
                             <GoogleLogin
                                 clientId="254303991922-di1i2i7bcp7fuvtp8ib5a7uirsq2kopm.apps.googleusercontent.com"
                                 onSuccess={this.responseGoogle}
+                                onFailure={this.responseGoogle}
+                                cookiePolicy={'single_host_origin'}
                                 buttonText="ลงทะเบียนด้วย Google"
                                 render={renderProps => (
                                     <button onClick={renderProps.onClick} style={{
