@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import Competitor from './Competitor';
 import { Link } from 'react-router-dom';
-import book from './img/book.png';
+import book2 from './img/book2.png';
 import Image from 'react-bootstrap/Image'
 
 class Test extends Component {
@@ -122,7 +122,7 @@ class Test extends Component {
                     </Container>
                 </Col>
                 <Col sm="12" lg="5" className="text-center" style={{paddingTop:"20px"}}>
-                    <Image src={book} style={{width:'350px', paddingLeft:'0px'}} className="IMAbook"/>
+                    <Image src={book2} style={{width:'350px', paddingLeft:'0px'}} className="IMAbook"/>
                 </Col>
             </Row>
             <Row>

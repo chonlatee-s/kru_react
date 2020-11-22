@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col'
 
 import Table from 'react-bootstrap/Table'
 
+
 export default class JobList extends Component {
     constructor(props) {
         super(props);
@@ -66,7 +67,7 @@ export default class JobList extends Component {
                 <Row>
                     <Col lg="12">
                         <h1 className="topicTop text-center">ตำแหน่งงานว่าง</h1>
-                        <h5 className="topic_sec">หางานมาฝาก ทั้งรัฐและเอกชน</h5>
+                        <h5 className="topic_sec">เปิดรับสมัครครูผู้สอนหลายอัตรา</h5>
                     </Col>
                 </Row>
                 <Row>

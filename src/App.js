@@ -57,6 +57,7 @@ function App() {
           <Route path="/Policy" component={Policy} />
           <Route path="/MobileFacebook" component={MobileFacebook} />
           <Route component={Error404} />
+
         </Switch>
       </div>
       <Bar/>
