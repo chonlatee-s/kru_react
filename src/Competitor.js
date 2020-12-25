@@ -11,6 +11,7 @@ class Competitor extends Component {
   }
 
   getUser = () => {
+    // axios.get(`http://localhost/kru_react_server/getUser.php`)
     axios.get(`./getUser.php`)
       .then((res) => {
         let data = res.data.map((item) => {

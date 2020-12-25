@@ -44,6 +44,7 @@ class Exam extends Component {
         if (this.props.match.params.topic === '1' || this.props.match.params.topic === '2') this.props.dispatchFromStore(dataLogin)
         if (this.props.match.params.topic === '1' || this.props.match.params.topic === '2' || this.props.match.params.topic === '3') {
             axios.get(`${window.location.origin}/getExams.php?topic=${this.props.match.params.topic}`)
+            // axios.get(`http://localhost/kru_react_server/getExams.php?topic=${this.props.match.params.topic}`)
                 .then((res) => {
 
                     var bytes = base64.decode(res.data);
@@ -153,6 +154,7 @@ class Exam extends Component {
         }
         if (this.props.match.params.topic === '3') {
             axios.post(`${window.location.origin}/sentUser.php`, qs.stringify(data))
+            // axios.post(`http://localhost/kru_react_server/sentUser.php`, qs.stringify(data))
                 .then((res) => {
                     // console.log(res)
                 })

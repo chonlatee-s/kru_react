@@ -15,13 +15,13 @@ function Menu() {
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul className="navbar-nav menu mx-auto">
                         <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
-                            <NavLink to="/joblist" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>หางาน</NavLink>
+                            <a href="/jobs/category/รับสมัครงาน/" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>หางาน</a>
+                        </li>
+                        <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
+                            <a href="/jobs/category/แนวข้อสอบ/" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>แนวข้อสอบ</a>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
                             <NavLink to="/how" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>เกณฑ์การสอบ</NavLink>
-                        </li>
-                        <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
-                            <NavLink to="/guidelines" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>แนวข้อสอบ</NavLink>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target="#collapsibleNavbar">
                             <NavLink to="/competition" activeStyle={{color:"#28a745"}} className="nav-link" style={{color:"#627498"}}>ผลการแข่งขัน</NavLink>

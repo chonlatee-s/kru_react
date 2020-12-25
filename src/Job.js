@@ -1,6 +1,5 @@
 import React from 'react';
 import ad2 from './img/b.png';
-import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -23,9 +22,9 @@ function Job() {
                 </Row>
                 <Row>
                     <Col xs="12">
-                        <Link to="joblist">
+                        <a href="/jobs/category/รับสมัครงาน/">
                             <button className="btn btn-outline-success btnFull">ดูตำแหน่งงานว่าง</button>
-                        </Link>
+                        </a>
                     </Col>
                 </Row>
               </Container>
