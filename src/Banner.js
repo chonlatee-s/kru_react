@@ -31,7 +31,7 @@ function Banner() {
               </Container>
             </Col>
           </Row>
-      </Container>
+        </Container>
     );
 }
 
