@@ -8,7 +8,7 @@ function Menu() {
     return (
         <nav className="navbar fixed-top navbar-expand-sm navbar-light" style={{backgroundColor: "#ffffff"}}>
             <div className="container">
-                <NavLink to="/" className="navbar-brand" ><img src={logo} style={{width:"12%"}} alt="ครูผู้ช่วย"/><span className="logo_brand"> ครูผู้ช่วย.com</span></NavLink>
+                <a href="https://ครูผู้ช่วย.com"><img src={logo} style={{width:"12%"}} alt="ครูผู้ช่วย"/><span className="logo_brand"> ครูผู้ช่วย.com</span></a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                     <span className="navbar-toggler-icon"></span>
                 </button>
