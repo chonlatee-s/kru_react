@@ -3,11 +3,12 @@ import ad from './img/b1.png';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-
+import Robot from './Robot';
 
 function Banner() {
     return (
       <Container className="boxWelcome">
+        <Robot/>
           <Row >
             <Col md="12" lg="5" className="mb-4"><img src={ad} className="img-fluid" alt="ครูผู้ช่วย"/></Col>
             <Col md="12" lg="7">

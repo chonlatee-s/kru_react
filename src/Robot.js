@@ -1,31 +1,23 @@
 import React from 'react';
-import robot from './img/robot.png';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Alert from 'react-bootstrap/Alert'
 
 
 function Robot() {
     return (
-        <div className="boxRobot">
-            <div className="container">
-                <Container className="boxWelcome">
-                    <Row>
-                        <Col xs="12" md="9">
-                            <p className="robotTopic">พิเศษสำหรับ วิชาเอกคอมพิวเตอร์</p>
-                            <p className="robotTopic2">ทำข้อสอบวิชาเอกได้ที่เว็บไซต์ นายโรบอท.com</p>
-                            <p className="txtRobot">
-                                ฝึกทำข้อสอบครูผู้ช่วย " วิชาเอกคอมพิวเตอร์ " ออนไลน์ ได้ที่เว็บไซต์ นายโรบอท.com 
-                                ข้อสอบมีการปรับปรุง แก้ไข เพิ่มเติมอย่างต่อเนื่อง เพื่อให้ทันต่อสถานการณ์ปัจจุบัน
-                            </p>
-                            <a className="btn btn-success btnFull" href="https://นายโรบอท.com">ฝึกทำข้อสอบ</a>
-                        </Col>
-                        <Col xs="12" md="3">
-                            <img src={robot} className="img-fluid" alt="ครูผู้ช่วย" width="250px"/>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+        <div className="container">
+            <Container>
+                <Row className="justify-content-md-center text-center">
+                    <Col mx="auto">
+                        <Alert variant="success">
+                            พิเศษสำหรับเอกคอมพิวเตอร์ ทำข้อสอบวิชาเอกเพิ่มเติมได้ที่เว็บไซต์ <a href="https://นายโรบอท.com">"นายโรบอท.com"</a>
+                        </Alert>
+                    </Col>
+                </Row>
+                <br/><br/>
+            </Container>
         </div>
     );
 }

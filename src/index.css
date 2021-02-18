@@ -166,30 +166,10 @@ ul {
   border-radius: unset
 }
 
-
-.boxRobot{
-  background-color: #697f6a;
-  width: 100%;
-}
 .robotTopic{
   color:#fff;
   font-weight: 400;
-  font-size: 26px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-}
-.robotTopic2{
-  color:#fff;
-  font-weight: 400;
   font-size: 20px;
-  padding-top: 0px;
-  margin-top: 0px;
-}
-
-.txtRobot{
-  color:#fff;
-  font-weight: 200;
-  font-size: 16px;
   padding-top: 0px;
   margin-top: 0px;
 }

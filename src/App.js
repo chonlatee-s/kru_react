@@ -26,7 +26,6 @@ import { Provider } from 'react-redux'
 import TestAdd from './TestAdd';
 import MobileFacebook from './MobileFacebook';
 import JobList from './JobList';
-import Robot from './Robot';
 
 function App() {
   const store = createStore(reducer)
@@ -34,7 +33,6 @@ function App() {
     <BrowserRouter>
     <Provider store = {store}>
       <Menu/>
-      <Robot/>
       <div className="container-fluid bg">
         <Switch>
           <Route path="/" exact={true} component={Home} />

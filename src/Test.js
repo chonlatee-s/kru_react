@@ -7,6 +7,7 @@ import Competitor from './Competitor';
 import { Link } from 'react-router-dom';
 import book2 from './img/book2.png';
 import Image from 'react-bootstrap/Image'
+import Ads from './Ads';
 
 class Test extends Component {
     state = {
@@ -125,6 +126,7 @@ class Test extends Component {
                     <Image src={book2} style={{width:'350px', paddingLeft:'0px'}} className="IMAbook"/>
                 </Col>
             </Row>
+            <Ads />
             <Row>
                 <Container fluid>
                     <Col lg="12"className="mb-4" style={{paddingTop:"150px"}}>
