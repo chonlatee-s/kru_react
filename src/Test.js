@@ -126,7 +126,6 @@ class Test extends Component {
                     <Image src={book2} style={{width:'350px', paddingLeft:'0px'}} className="IMAbook"/>
                 </Col>
             </Row>
-            <Ads />
             <Row>
                 <Container fluid>
                     <Col lg="12"className="mb-4" style={{paddingTop:"150px"}}>
@@ -135,6 +134,7 @@ class Test extends Component {
                     </Col>
                 </Container>
             </Row>
+            <Ads />
         </Container>
         );
     }
