@@ -7,7 +7,7 @@ import Competitor from './Competitor';
 import { Link } from 'react-router-dom';
 import book2 from './img/book2.png';
 import Image from 'react-bootstrap/Image'
-import Ads from './Ads';
+// import Ads from './Ads';
 
 class Test extends Component {
     state = {
@@ -134,7 +134,7 @@ class Test extends Component {
                     </Col>
                 </Container>
             </Row>
-            <Ads />
+            {/* <Ads /> */}
         </Container>
         );
     }

@@ -4,12 +4,13 @@ import axios from 'axios'
 
 class Robot extends Component {
     state = {
-        txt : "ถิ่นไทยในป่ากว้าง ห่างไกล แสงอารยธรรมใด ส่องบ้าง เห็นเทียนอยู่รำไร เล่มหนึ่ง ครูนั่นแหละอาจสร้าง เสกให้ชัชวาล [ ม.ล.ปิ่น มาลากุล ]"
+        txt : "ถิ่นไทยในป่ากว้าง ห่างไกล แสงอารยธรรมใด ส่องบ้าง เห็นเทียนอยู่รำไร เล่มหนึ่ง ครูนั่นแหละอาจสร้าง เสกให้ชัชวาล [ ม.ล.ปิ่น มาลากุล ]",
+        ref : "#"
     }
     getNews = () => {
         axios.get(`${window.location.origin}/getNews.php`)
             .then((res) => {
-                this.setState({txt:res.data.news})
+                this.setState({txt:res.data.news, ref:res.data.ref})
             })
             .catch((err) => {
                 console.log(err)
@@ -35,7 +36,7 @@ class Robot extends Component {
                         fontSize:"16px",
                         marginBottom:'70px'
                         }}>
-                            {`" ${this.state.txt} "`}
+                            <a href={this.state.ref} style={{color:'#b7996c'}}>{`${this.state.txt}`}</a>
                         </p>
                     </Col>
                 </Row>

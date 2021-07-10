@@ -17,9 +17,9 @@ class Coffee extends Component {
                 <Row style={{paddingTop:"50px"}}>
                     <Col lg="3" md="12">
                         <Alert style={{backgroundColor:"#00a5df"}}>
-                            <Alert.Heading style={{color:"#ffffff", textAlign:'center'}}>ธนาคารกรุงไทย</Alert.Heading>
-                            <p style={{color:"#ffffff",marginBottom:'0px'}}>เลขบัญชี 317-0-125591</p>
-                            <p style={{color:"#ffffff"}}>ชื่อบัญชี  ชลธี สินสาตร์</p>
+                            <Alert.Heading style={{color:"#ffffff", textAlign:'center'}}>พร้อมเพย์</Alert.Heading>
+                            <p style={{color:"#ffffff", marginBottom:'0px', textAlign:'center'}}>082-781-8941</p>
+                            <p style={{color:"#ffffff", textAlign:'center'}}>ชลธี สินสาตร์</p>
                         </Alert>
                     </Col>
                     <Col lg="9" md="12">
@@ -27,8 +27,7 @@ class Coffee extends Component {
                             <p style={{marginBottom:'2px'}}>
                                 สวัสดีครับ ผมกำลังพัฒนาเว็บไซต์นี้ให้ดีมากยิ่งขึ้น เพื่อเพื่อนครู และผู้ที่กำลังจะสอบครูผู้ช่วย
                                 รวมไปถึงพัฒนาแอปพลิเคชัน สื่อการสอน แจกไฟล์เอกสาร และแนวข้อสอบ โดยได้รวบรวมมาเก็บไว้ ให้ง่ายต่อการดาวน์โหลด
-                                ถ้าคิดว่าเว็บไซต์นี้มีประโยชน์ และอยากสนับสนุนค่า "กาแฟหรือชานมไข่มุก" สักแก้ว 
-                                ก็ขอขอบคุณมากครับ :)
+                                ขอบคุณที่เลี้ยงชานมไข่มุกแอดมินครับ :)
                             </p>
                         </div>
                     </Col>

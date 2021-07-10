@@ -23,7 +23,6 @@ import TestRedux from './TestRedux';
 import { createStore } from 'redux'
 import reducer from './reducer'
 import { Provider } from 'react-redux'
-import TestAdd from './TestAdd';
 import MobileFacebook from './MobileFacebook';
 import JobList from './JobList';
 
@@ -51,8 +50,6 @@ function App() {
           <Route path="/me" component={AboutMe} />
           <Route path="/regis" component={Regis} />
           <Route path="/coffee" component={Coffee} />
-          <Route path="/testAdd" component={TestAdd} />
-
           <Route path="/TestRedux" component={TestRedux} />
           <Route path="/Policy" component={Policy} />
           <Route path="/MobileFacebook" component={MobileFacebook} />
