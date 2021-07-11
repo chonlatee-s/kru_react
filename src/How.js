@@ -9,7 +9,7 @@ function How() {
         <Row>
             <Col lg="12">
                 <h1 className="topicTop text-center">เกณฑ์การสอบครูผู้ช่วย</h1>
-                <h5 className="topic_sec">การสอบครูผู้ช่วยแบ่งออกเป็น 3 ส่วน (เกณฑ์ใหม่ ปี 2563)</h5>
+                <h5 className="topic_sec">การสอบครูผู้ช่วยแบ่งออกเป็น 3 ส่วน</h5>
             </Col>
         </Row>
         <Row className="text-center">
