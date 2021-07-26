@@ -13,7 +13,7 @@ class Test extends Component {
     state = {
         showButton:false,
         showForm:true,
-        showBtnStart:false,
+        showBtnStart:true,
         topic:'0',
 
         swG:true,
@@ -29,16 +29,15 @@ class Test extends Component {
     checkCompet = () => {
         if(this.myRefG.current.checked){
             this.setState({
-                showForm:true,
                 swG:true,
-                showBtnStart:false, // ปิดปุ่มทั่วไปก่อน จนกว่าจะมีการเลือกวิชาที่จะสอบ
+                showBtnStart:true, // ปิดปุ่มทั่วไปก่อน จนกว่าจะมีการเลือกวิชาที่จะสอบ
 
                 showButton:false,
                 swC:false
             })
         }else{
             this.setState({
-                showForm:false,
+                showBtnStart:false,
                 swG:false,
 
                 showButton:true,
@@ -46,10 +45,6 @@ class Test extends Component {
             })
         }
 
-    }
-    getTopic = () => {
-        this.myRefTopic.current.value !== '0' ? this.setState({showBtnStart:true}) : this.setState({showBtnStart:false})
-        this.setState({topic:this.myRefTopic.current.value})
     }
 
     render() {
@@ -66,24 +61,6 @@ class Test extends Component {
                         </Row>
                         <Row style={{paddingTop:"20px"}}>
                             <Col lg="12">
-                            {
-                                this.state.showForm?
-                                <Form ref={this.myRefForm}>
-                                    <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                                        <Form.Control as="select" size="sm" onChange={this.getTopic} ref={this.myRefTopic}>
-                                            <option value="0">เลือกหัวข้อที่ต้องการสอบ</option>
-                                            <option value="1">ภาค ก</option>
-                                            <option value="2">ภาค ข</option>
-                                        </Form.Control>
-                                    </Form.Group>
-                                    {
-                                        this.state.showBtnStart?
-                                        <Link to={`/exam/${this.state.topic}`}><button className="btn btn-outline-success btnFull" type="button" ref={this.myRefBtnStart}>เริ่มทำข้อสอบ</button></Link>
-                                        :null
-                                    }
-                                </Form>
-                                :null
-                            }
                                 <div style={{paddingTop:"10px"}}>
                                     <Form.Check 
                                         type="switch"
@@ -96,8 +73,15 @@ class Test extends Component {
                                     <p style={{ fontWeight:300, fontSize:"14px"}}>
                                         โหมดทั่วไปจะมีข้อสอบทั้งหมด 10 ข้อ ให้เวลาทำ 10 นาที แข่งกับตัวเองฝึกฝนไปเรื่อย ๆ 
                                     </p>
+                                    
+                                    {
+                                        this.state.showBtnStart?
+                                        <Link to={`/exam/1`}><button className="btn btn-outline-success btnFull" type="button" ref={this.myRefBtnStart}>เริ่มทำข้อสอบ</button></Link>
+                                        :null
+                                    }
                                 </div>
                                 <div>
+                                    <br/>
                                     <Form.Check 
                                         type="switch"
                                         id="custom-switch"

@@ -9,8 +9,8 @@ function Home() {
   return (
     <div>
       <Banner/>
-      <Job/>
       <Competition/>
+      <Job/>
       <MenuBox/>
       <How/>
     </div>
