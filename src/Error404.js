@@ -7,7 +7,7 @@ function Error404() {
             <path d="M7.002 12a1 1 0 112 0 1 1 0 01-2 0zM7.1 5.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 5.995z"/>
         </svg>
         <p style={{ fontSize:"65px",fontWeight:"300", color: "#627498",marginBottom:"0px" }}>ปัญหา 404</p>
-        <p style={{ fontSize:"26px", color: "#627498", marginTop:"0px",marginBottom:"25px"}}>บ่พ้อหน้านี้อยู่เทิงเซิร์ฟเวอร์เด้อ</p>
+        <p style={{ fontSize:"26px", color: "#627498", marginTop:"0px",marginBottom:"25px"}}>ไม่พบหน้านี้ กรุณากลับหน้าหลัก</p>
     </div>
   );
 }
