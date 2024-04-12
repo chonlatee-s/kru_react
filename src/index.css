@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;700&display=swap');
+body {
+  margin: 0;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafbfd;
+}
+.bg {
+  background-color: #ffffff;
+}
+.menu {
+  font-weight: 300;
+  font-size: 16px;
+}
+.logo_brand {
+  color: #b7996c;
+  font-weight: 400;
+  font-size: 20px;
+}
+.boxCompetition {
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
+ul {
+  list-style: none;
+}
+.boxWelcome {
+  padding-top: 125px;
+  color: #627498;
+}
+.topicBoxMenu {
+  font-weight: 400;
+  font-size: 21px;
+}
+.boxMenu {
+  margin-top: 125px;
+  color: #627498;
+}
+.boxMenu a:link{color:#627498;}
+.boxMenu a:visited{color:#627498;}
+.boxMenu a:hover{color:#b7996c;}
+
+.boxBar {
+  color: #627498;
+  text-align: center;
+  padding-top: 50px;
+  background-color: #fafbfd;
+}
+
+.boxHow{
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
+
+.boxMagic{
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
+.boxPro{
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
+.boxTutorial{
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
+.boxTutorial a:link{color: #627498;}
+.boxTutorial a:visited{color: #627498;}
+.boxTutorial a:hover{color: #28a745;}
+.boxTest{
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
+.topic{
+  color: #627498;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+.topic_sec{
+  color: #627498;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 300;
+}
+.boxText{
+  padding-top:10px;
+  padding-right:20px;
+  padding-left:20px;
+  padding-bottom:3px;
+  border-left-width:5px;
+  border-left-color:#b7996c;
+  border-left-style:solid;
+  background-color:#f9f7f3;
+}
+.boxExam{
+  padding-top:80px;
+  padding-bottom:50px;
+  color: #627498;
+}
+.boxExam a:link{color: #627498;}
+.boxExam a:visited{color: #627498;}
+.boxExam a:hover{color: #b7996c;}
+
+.boxResult{
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
+.boxRegis{
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
+.question{
+	font-weight: 300;
+	margin-bottom:0px;
+}
+.result{font-size: 12px; margin-bottom:0px;}
+.checkAns{
+  margin-bottom:0px;
+  text-align: right;
+}
+
+.boxGuidelines{
+  padding-top:125px;
+  padding-bottom:50px;
+  color: #627498;
+}
+
+.pagination {
+  margin: 15px auto;
+  display: flex;
+  list-style: none;
+  outline: none;
+}
+.pagination > .active > a{
+  background-color: #007bff ;
+  border-color: #007bff ;
+  color: #fff;
+}
+.pagination > li > a{
+  border: 1px solid #007bff ;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+  background-color: #007bff ;
+  border-color: #007bff;
+  outline: none ;
+}
+.pagination > li > a, .pagination > li > span{
+  color: #007bff
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
+  border-radius: unset
+}
+
+@media (max-width: 767.98px) { 
+  .btnFull {width: 100%}
+  .logo_brand {
+    color: #b7996c;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .topicTop{
+    color: #627498;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .topic_sec{
+    color: #627498;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 300;
+  }
+  .IMAbook{
+    display: none;
+  }
+ }
+
+a:hover {
+  text-decoration: none;
+} 
